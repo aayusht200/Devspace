@@ -1,13 +1,15 @@
-import { useState } from 'react';
+import Clock from './components/Clock';
+import Pomodoro from './components/Pomodoro';
 import './App.css';
 
 function App() {
-    const [count, setCount] = useState(0);
-
     return (
-        <>
-            <h1>Hello World</h1>
-        </>
+        <div>
+            <h1>
+                <Clock />
+            </h1>
+            <Pomodoro />
+        </div>
     );
 }
 
