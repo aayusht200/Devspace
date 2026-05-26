@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { padNum } from '../helperFunctions/functions';
 import { pomodoroMode } from '../data/data';
+import Button from './Button';
 
 const Pomodoro = () => {
     const [timer, setTimer] = useState(pomodoroMode.pomodoro);
@@ -31,23 +32,23 @@ const Pomodoro = () => {
     return (
         <div className="pomodoro-timer">
             <div className="header-pomodoro">
-                <button className="btn" onClick={() => setMode('pomodoro')}>
+                <Button className="pomodoro" onClick={() => setMode('pomodoro')}>
                     Pomodoro
-                </button>
-                <button className="btn" onClick={() => setMode('short')}>
+                </Button>
+                <Button className="pomodoro" onClick={() => setMode('short')}>
                     Short
-                </button>
-                <button className="btn" onClick={() => setMode('long')}>
+                </Button>
+                <Button className="pomodoro" onClick={() => setMode('long')}>
                     Long
-                </button>
+                </Button>
             </div>
             <div className="display-timer">
                 {padNum(Math.floor(timer.totalSeconds / 60))}:{padNum(Math.floor(timer.totalSeconds % 60))}
             </div>
             <div className="footer-pomodoro">
-                <button className="btn" onClick={() => toggleRunning()}>
+                <Button className="pomodoro" onClick={toggleRunning}>
                     {timer.isRunning ? 'Stop' : 'Start'}
-                </button>
+                </Button>
             </div>
         </div>
     );
