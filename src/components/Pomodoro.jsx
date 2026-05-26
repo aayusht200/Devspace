@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { padNum } from '../helperFunctions/functions';
 import { pomodoroMode } from '../data/data';
-import Button from './Button';
-
+import Button from './Button/Button';
+import Card from './Card/Card';
 const Pomodoro = () => {
     const [timer, setTimer] = useState(pomodoroMode.pomodoro);
     function setMode(currMode) {
@@ -30,7 +30,7 @@ const Pomodoro = () => {
         setTimer((prev) => ({ ...prev, isRunning: !prev.isRunning }));
     }
     return (
-        <div className="pomodoro-timer">
+        <Card className="pomodoro-timer" header='Pomodoro Timer'>
             <div className="header-pomodoro">
                 <Button className="pomodoro" onClick={() => setMode('pomodoro')}>
                     Pomodoro
@@ -50,7 +50,7 @@ const Pomodoro = () => {
                     {timer.isRunning ? 'Stop' : 'Start'}
                 </Button>
             </div>
-        </div>
+        </Card>
     );
 };
 

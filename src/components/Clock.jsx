@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { padNum } from '../helperFunctions/functions';
+import Card from './Card/Card';
 const Clock = () => {
     const [time, setTime] = useState(new Date());
     useEffect(() => {
@@ -11,14 +12,14 @@ const Clock = () => {
     const date = formatDate(time);
     const currTime = formatTime(time);
     return (
-        <div className="currDate">
+        <Card className="currDate" header="Clock">
             <div className="time">
                 {currTime.hour}:{currTime.minutes}:{currTime.seconds} {currTime.meridian}
             </div>
             <div className="date">
                 {date.day} {date.date} {date.year}
             </div>
-        </div>
+        </Card>
     );
 };
 

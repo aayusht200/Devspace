@@ -1,0 +1,10 @@
+.card {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    padding: 1rem;
+    gap: 1rem;
+    border: 1px solid;
+}
+.card-footer {
+    place-self: end;
+}
