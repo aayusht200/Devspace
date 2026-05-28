@@ -2,33 +2,24 @@ import { useEffect, useState } from 'react';
 import { bookData } from '../data/data';
 import Card from './Card/Card';
 import StatusBar from './StatusBar/StatusBar';
+import useLocalStorage from '../hooks/useLocalStorage';
 
 const ReadingList = () => {
-    const [books, setBooks] = useState(() => {
-        const savedBooks = localStorage.getItem('books');
-        if (savedBooks) {
-            return JSON.parse(savedBooks);
-        }
-        localStorage.setItem('books', JSON.stringify(bookData));
-        return bookData;
-    });
-    useEffect(() => {
-        localStorage.setItem('books', JSON.stringify(books));
-    }, [books]);
+    const [books, setBooks] = useLocalStorage('books', bookData);
 
     return (
         <Card className="reading-list" header="Reading List">
             {Object.entries(books)
                 .slice(0, 3)
                 .map(([uuid, currBook]) => (
-                    <BookStatus book={currBook} key={uuid} />
+                    <BookInfo book={currBook} key={uuid} />
                 ))}
         </Card>
     );
 };
-function BookStatus({ book }) {
+function BookInfo({ book }) {
     return (
-        <div className="book-status">
+        <div className="book-info">
             <div className="book-title">{book.title}</div>
             <div className="book-author">{book.author}</div>
             <StatusBar current={book.currentPage} total={book.totalPage} />

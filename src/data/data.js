@@ -75,6 +75,14 @@ const ProjectData = {
                 taskDescription: 'Create a reading list tracker',
                 taskStatus: 'closed',
             },
+            {
+                id: 'DevSpace-4',
+                title: 'project display',
+                startDate: '2026-05-26',
+                taskDescription:
+                    'Create a project display which shows status and a status bar with percentage of open projects',
+                taskStatus: 'open',
+            },
         ],
     },
 };

@@ -3,19 +3,9 @@ import { padNum } from '../helperFunctions/functions';
 import { pomodoroMode } from '../data/data';
 import Button from './Button/Button';
 import Card from './Card/Card';
+import useLocalStorage from '../hooks/useLocalStorage';
 const Pomodoro = () => {
-    const [data, setData] = useState(() => {
-        const savedData = localStorage.getItem('pomodoro');
-        if (savedData) {
-            return JSON.parse(savedData);
-        }
-        localStorage.setItem('pomodoro', JSON.stringify(pomodoroMode));
-        return pomodoroMode;
-    });
-    useEffect(() => {
-        localStorage.setItem('pomodoro', JSON.stringify(data));
-        setTimer(data.pomodoro);
-    }, [data]);
+    const [data, setData] = useLocalStorage('pomodoro', pomodoroMode);
     const [timer, setTimer] = useState(data.pomodoro);
     function setMode(currMode) {
         setTimer({ ...data[currMode] });

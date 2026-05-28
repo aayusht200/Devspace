@@ -8,4 +8,7 @@ function randomId() {
 function clearLocalStorage(key) {
     localStorage.removeItem(key);
 }
-export { padNum, randomId, clearLocalStorage };
+function toCapitalize(str) {
+    return str.slice(0, 1).toUpperCase() + str.slice(1);
+}
+export { padNum, randomId, clearLocalStorage, toCapitalize };

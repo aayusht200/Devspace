@@ -6,10 +6,11 @@ import ProjectTracker from './components/ProjectTracker';
 import './App.css';
 
 function App() {
+    // localStorage.clear();
     return (
         <div>
             {/* <Clock /> */}
-            <Pomodoro />
+            {/* <Pomodoro /> */}
             {/* <ReadingList /> */}
             {/* <ProjectTracker /> */}
         </div>
