@@ -5,5 +5,7 @@ function padNum(num) {
 function randomId() {
     return crypto.randomUUID();
 }
-
-export { padNum, randomId };
+function clearLocalStorage(key) {
+    localStorage.removeItem(key);
+}
+export { padNum, randomId, clearLocalStorage };
