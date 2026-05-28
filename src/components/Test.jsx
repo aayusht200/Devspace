@@ -1,0 +1,58 @@
+const tasksData = {
+    '04d87b1b-fb43-4fbb-bf70-6143afd52046': {
+        id: 'task-1',
+        title: 'Build Task Tracker',
+        description: 'Create task project component',
+        status: 'active',
+        category: 'project',
+    },
+    'c71e00cd-497a-4981-9bcf-138e4cd0a420': {
+        id: 'task-2',
+        title: 'Refactor Pomodoro Timer',
+        description: 'Move timer persistence into custom hook',
+        status: 'pending',
+        category: 'project',
+    },
+    'caa8488e-d311-4ea1-bf65-1e530905dba6': {
+        id: 'task-3',
+        title: 'Complete Push Day Workout',
+        description: 'Chest, shoulders, and triceps session',
+        status: 'done',
+        category: 'fitness',
+    },
+    'a845b7e4-1ad6-4cd5-b633-434e796be10b': {
+        id: 'task-4',
+        title: 'Read Atomic Habits',
+        description: 'Finish chapter on habit stacking',
+        status: 'active',
+        category: 'personal',
+    },
+    'd6dd24c3-ce73-487f-b830-be3128097f1e': {
+        id: 'task-5',
+        title: 'Add Project Status Filters',
+        description: 'Implement filtering by active and completed tasks',
+        status: 'pending',
+        category: 'project',
+    },
+    'aa539815-2686-44e5-b120-ec0a203445fa': {
+        id: 'task-6',
+        title: 'Morning Cardio Session',
+        description: '30 minutes incline treadmill walk',
+        status: 'done',
+        category: 'fitness',
+    },
+    '4e9e1387-1dbd-40c8-8d17-32513b6516ad': {
+        id: 'task-7',
+        title: 'Organize Component Structure',
+        description: 'Separate dashboard widgets into reusable folders',
+        status: 'active',
+        category: 'project',
+    },
+    'e8d89e96-0dba-40c1-b760-39b4b25af923': {
+        id: 'task-8',
+        title: 'Plan Weekly Schedule',
+        description: 'Prepare upcoming study and gym schedule',
+        status: 'pending',
+        category: 'personal',
+    },
+};

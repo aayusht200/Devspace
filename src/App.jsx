@@ -3,6 +3,7 @@ import Pomodoro from './components/Pomodoro';
 import { ReadingList } from './components/ReadingList';
 import StatusBar from './components/StatusBar/StatusBar';
 import ProjectTracker from './components/ProjectTracker';
+import Tasks from './components/Tasks';
 import './App.css';
 
 function App() {
@@ -13,15 +14,9 @@ function App() {
             {/* <Pomodoro /> */}
             {/* <ReadingList /> */}
             {/* <ProjectTracker /> */}
+            <Tasks />
         </div>
     );
 }
 
 export default App;
-// Task { doing tasks insted of notes
-//    id: 'task-1',
-//    title: 'Build Project Tracker',
-//    description: 'Create dashboard project component',
-//    status: 'active',
-//    category: 'project'
-// }

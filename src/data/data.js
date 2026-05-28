@@ -45,7 +45,7 @@ const bookData = {
         author: 'Rebecca Yarros',
     },
 };
-const ProjectData = {
+const projectData = {
     'ae01f519-a68e-44b3-8de0-b52cdb7e4522': {
         title: 'DevSpace',
         startDate: '2026-05-26',
@@ -59,21 +59,21 @@ const ProjectData = {
                 title: 'Clock Component',
                 startDate: '2026-05-26',
                 taskDescription: 'Create a clock component with current time & date.',
-                taskStatus: 'closed',
+                taskStatus: 'completed',
             },
             {
                 id: 'DevSpace-2',
                 title: 'pomodor timer',
                 startDate: '2026-05-26',
                 taskDescription: 'Create a pomodoro style timer with pomodoro time, short break, long breaks.',
-                taskStatus: 'closed',
+                taskStatus: 'completed',
             },
             {
                 id: 'DevSpace-3',
                 title: 'reading list',
                 startDate: '2026-05-26',
                 taskDescription: 'Create a reading list tracker',
-                taskStatus: 'closed',
+                taskStatus: 'completed',
             },
             {
                 id: 'DevSpace-4',
@@ -98,21 +98,21 @@ const ProjectData = {
                 title: 'game setup',
                 startDate: '2026-05-28',
                 taskDescription: 'Setup React and Vite project structure with reusable components.',
-                taskStatus: 'closed',
+                taskStatus: 'completed',
             },
             {
                 id: 'MemoryGame-2',
                 title: 'memory card logic',
                 startDate: '2026-05-28',
                 taskDescription: 'Build interactive memory card matching gameplay with score tracking.',
-                taskStatus: 'closed',
+                taskStatus: 'completed',
             },
             {
                 id: 'MemoryGame-3',
                 title: 'difficulty levels',
                 startDate: '2026-05-28',
                 taskDescription: 'Implement easy, medium, and hard difficulty modes.',
-                taskStatus: 'closed',
+                taskStatus: 'completed',
             },
             {
                 id: 'MemoryGame-4',
@@ -131,4 +131,56 @@ const ProjectData = {
         ],
     },
 };
-export { pomodoroMode, bookData, ProjectData };
+
+const tasksData = {
+    '04d87b1b-fb43-4fbb-bf70-6143afd52046': {
+        title: 'Build Task Tracker',
+        description: 'Create task project component',
+        status: 'active',
+        category: 'project',
+    },
+    'c71e00cd-497a-4981-9bcf-138e4cd0a420': {
+        title: 'Refactor Pomodoro Timer',
+        description: 'Move timer persistence into custom hook',
+        status: 'pending',
+        category: 'project',
+    },
+    'caa8488e-d311-4ea1-bf65-1e530905dba6': {
+        title: 'Complete Push Day Workout',
+        description: 'Chest, shoulders, and triceps session',
+        status: 'done',
+        category: 'fitness',
+    },
+    'a845b7e4-1ad6-4cd5-b633-434e796be10b': {
+        title: 'Read Atomic Habits',
+        description: 'Finish chapter on habit stacking',
+        status: 'active',
+        category: 'personal',
+    },
+    'd6dd24c3-ce73-487f-b830-be3128097f1e': {
+        title: 'Add Project Status Filters',
+        description: 'Implement filtering by active and completed tasks',
+        status: 'pending',
+        category: 'project',
+    },
+    'aa539815-2686-44e5-b120-ec0a203445fa': {
+        title: 'Morning Cardio Session',
+        description: '30 minutes incline treadmill walk',
+        status: 'done',
+        category: 'fitness',
+    },
+    '4e9e1387-1dbd-40c8-8d17-32513b6516ad': {
+        title: 'Organize Component Structure',
+        description: 'Separate dashboard widgets into reusable folders',
+        status: 'active',
+        category: 'project',
+    },
+    'e8d89e96-0dba-40c1-b760-39b4b25af923': {
+        title: 'Plan Weekly Schedule',
+        description: 'Prepare upcoming study and gym schedule',
+        status: 'pending',
+        category: 'personal',
+    },
+};
+
+export { pomodoroMode, bookData, projectData, tasksData };

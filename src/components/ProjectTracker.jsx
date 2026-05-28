@@ -1,11 +1,11 @@
-import { ProjectData } from '../data/data';
+import { projectData } from '../data/data';
 import { useEffect, useState } from 'react';
 import Card from './Card/Card';
 import { toCapitalize } from '../helperFunctions/functions';
 import StatusBar from './StatusBar/StatusBar';
 import useLocalStorage from '../hooks/useLocalStorage';
 const ProjectTracker = () => {
-    const [data, setData] = useLocalStorage('projects', ProjectData);
+    const [data, setData] = useLocalStorage('projects', projectData);
     return (
         <Card className="project-tracker" header="Projects">
             {Object.entries(data)
@@ -35,7 +35,7 @@ function OpenTasks({ taskData }) {
     if (!taskData.length) return null;
     return (
         <div className="open-tasks">
-            <p className="task-header">Open Tasks</p>
+            <p className="task-header">Active Tasks</p>
             {Object.entries(taskData)
                 .slice(0, 3)
                 .map(([id, task]) => {
