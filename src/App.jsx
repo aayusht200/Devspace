@@ -9,9 +9,9 @@ function App() {
     return (
         <div>
             {/* <Clock /> */}
-            {/* <Pomodoro /> */}
+            <Pomodoro />
             {/* <ReadingList /> */}
-            <ProjectTracker />
+            {/* <ProjectTracker /> */}
         </div>
     );
 }

@@ -4,9 +4,21 @@ import { pomodoroMode } from '../data/data';
 import Button from './Button/Button';
 import Card from './Card/Card';
 const Pomodoro = () => {
-    const [timer, setTimer] = useState(pomodoroMode.pomodoro);
+    const [data, setData] = useState(() => {
+        const savedData = localStorage.getItem('pomodoro');
+        if (savedData) {
+            return JSON.parse(savedData);
+        }
+        localStorage.setItem('pomodoro', JSON.stringify(pomodoroMode));
+        return pomodoroMode;
+    });
+    useEffect(() => {
+        localStorage.setItem('pomodoro', JSON.stringify(data));
+        setTimer(data.pomodoro);
+    }, [data]);
+    const [timer, setTimer] = useState(data.pomodoro);
     function setMode(currMode) {
-        setTimer({ ...pomodoroMode[currMode] });
+        setTimer({ ...data[currMode] });
     }
     useEffect(() => {
         if (!timer.isRunning) return;
@@ -14,7 +26,7 @@ const Pomodoro = () => {
             setTimer((prev) => {
                 if (prev.totalSeconds === 0) {
                     return {
-                        ...pomodoroMode[prev.mode],
+                        ...data[prev.mode],
                         isRunning: false,
                     };
                 }
@@ -30,7 +42,7 @@ const Pomodoro = () => {
         setTimer((prev) => ({ ...prev, isRunning: !prev.isRunning }));
     }
     return (
-        <Card className="pomodoro-timer" header='Pomodoro Timer'>
+        <Card className="pomodoro-timer" header="Pomodoro Timer">
             <div className="header-pomodoro">
                 <Button className="pomodoro" onClick={() => setMode('pomodoro')}>
                     Pomodoro

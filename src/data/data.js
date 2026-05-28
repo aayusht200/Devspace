@@ -1,5 +1,3 @@
-import { randomId } from '../helperFunctions/functions';
-
 const pomodoroMode = {
     pomodoro: {
         mode: `pomodoro`,
