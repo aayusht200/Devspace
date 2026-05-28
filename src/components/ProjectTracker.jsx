@@ -19,13 +19,37 @@ const ProjectTracker = () => {
 
 function ProjectInfo({ project }) {
     const openTasks = project.tasks.filter((task) => {
-        return task.taskStatus === 'closed';
+        return task.taskStatus === 'open';
     });
     return (
         <div className="project-info">
             <div className="project-title">{project.title}</div>
             <div className="project-status">{toCapitalize(project.status)}</div>
-            <StatusBar current={openTasks.length} total={project.tasks.length} />
+            <StatusBar current={project.tasks.length - openTasks.length} total={project.tasks.length} />
+            <OpenTasks taskData={openTasks} />
+        </div>
+    );
+}
+
+function OpenTasks({ taskData }) {
+    if (!taskData.length) return null;
+    return (
+        <div className="open-tasks">
+            <p className="task-header">Open Tasks</p>
+            {Object.entries(taskData)
+                .slice(0, 3)
+                .map(([id, task]) => {
+                    return <TaskInfo task={task} key={task.id} />;
+                })}
+        </div>
+    );
+}
+function TaskInfo({ task }) {
+    return (
+        <div className="task-info">
+            <div className="task-title">{toCapitalize(task.title)}</div>
+            <div className="task-startdate">{task.startDate}</div>
+            <div className="task-description">{task.taskDescription}</div>
         </div>
     );
 }

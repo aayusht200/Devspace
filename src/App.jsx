@@ -18,3 +18,10 @@ function App() {
 }
 
 export default App;
+// Task { doing tasks insted of notes
+//    id: 'task-1',
+//    title: 'Build Project Tracker',
+//    description: 'Create dashboard project component',
+//    status: 'active',
+//    category: 'project'
+// }

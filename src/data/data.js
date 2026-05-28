@@ -85,5 +85,50 @@ const ProjectData = {
             },
         ],
     },
+    'bb12c729-b42d-4d31-91f7-7cb5a8d41234': {
+        title: 'Memory Game',
+        startDate: '2026-05-28',
+        endDate: '2026-05-28',
+        status: 'active',
+        description:
+            'A fun and interactive memory card game built with React and Vite. Test your memory skills by matching pairs of cards!',
+        tasks: [
+            {
+                id: 'MemoryGame-1',
+                title: 'game setup',
+                startDate: '2026-05-28',
+                taskDescription: 'Setup React and Vite project structure with reusable components.',
+                taskStatus: 'closed',
+            },
+            {
+                id: 'MemoryGame-2',
+                title: 'memory card logic',
+                startDate: '2026-05-28',
+                taskDescription: 'Build interactive memory card matching gameplay with score tracking.',
+                taskStatus: 'closed',
+            },
+            {
+                id: 'MemoryGame-3',
+                title: 'difficulty levels',
+                startDate: '2026-05-28',
+                taskDescription: 'Implement easy, medium, and hard difficulty modes.',
+                taskStatus: 'closed',
+            },
+            {
+                id: 'MemoryGame-4',
+                title: 'responsive ui',
+                startDate: '2026-05-28',
+                taskDescription: 'Create responsive layout with smooth animations and transitions.',
+                taskStatus: 'open',
+            },
+            {
+                id: 'MemoryGame-5',
+                title: 'deployment',
+                startDate: '2026-05-28',
+                taskDescription: 'Deploy completed project to Netlify for live preview.',
+                taskStatus: 'open',
+            },
+        ],
+    },
 };
 export { pomodoroMode, bookData, ProjectData };
