@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import { bookData } from '../data/data';
-import Card from './Card/Card';
-import StatusBar from './StatusBar/StatusBar';
-import useLocalStorage from '../hooks/useLocalStorage';
-
+import { bookData } from '../../data/data';
+import Card from '../Card/Card';
+import StatusBar from '../StatusBar/StatusBar';
+import useLocalStorage from '../../hooks/useLocalStorage';
+import './ReadingList.css'
 const ReadingList = () => {
     const [books, setBooks] = useLocalStorage('books', bookData);
 
@@ -26,4 +26,4 @@ function BookInfo({ book }) {
         </div>
     );
 }
-export { ReadingList };
+export default ReadingList;

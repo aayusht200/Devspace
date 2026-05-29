@@ -1,0 +1,65 @@
+.heat-map {
+    display: flex;
+    gap: 0.2rem;
+    overflow: auto;
+    padding: 0.2rem;
+    width: 80%;
+    height: 40%;
+    position: relative;
+}
+.week {
+    display: grid;
+    gap: 0.2rem;
+}
+.map-block {
+    border: 1px solid rgba(0, 0, 0, 0.368);
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 0.75rem;
+    aspect-ratio: 1;
+}
+.hover-text {
+    position: absolute;
+    cursor: default;
+    display: none;
+    background-color: aliceblue;
+    border: 1px solid;
+    top: 1rem;
+    z-index: 1;
+}
+.map-block:hover .hover-text {
+    border-radius: 1rem;
+    padding: 0 0.2rem 0 0.2rem;
+    display: block;
+}
+.FOURTH_QUARTILE {
+    background-color: rgb(23, 112, 47);
+}
+.FIRST_QUARTILE {
+    background-color: rgba(23, 112, 47, 0.25);
+}
+.SECOND_QUARTILE {
+    background-color: rgba(23, 112, 47, 0.5);
+}
+.THIRD_QUARTILE {
+    background-color: rgba(23, 112, 47, 0.75);
+}
+
+.profile-picture {
+    border-radius: 5rem;
+    object-fit: contain;
+    object-position: center;
+    width: 30%;
+    aspect-ratio: 1;
+}
+.profile-info {
+    display: flex;
+}
+.profile-picture-container {
+}
+.user-info {
+}
+.user-link {
+}

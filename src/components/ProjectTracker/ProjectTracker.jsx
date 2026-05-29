@@ -1,9 +1,10 @@
-import { projectData } from '../data/data';
+import { projectData } from '../../data/data';
 import { useEffect, useState } from 'react';
-import Card from './Card/Card';
-import { toCapitalize } from '../helperFunctions/functions';
-import StatusBar from './StatusBar/StatusBar';
-import useLocalStorage from '../hooks/useLocalStorage';
+import Card from '../Card/Card.jsx';
+import { toCapitalize } from '../../helperFunctions/functions.js';
+import StatusBar from '../StatusBar/StatusBar.jsx';
+import useLocalStorage from '../../hooks/useLocalStorage.js';
+import './projectTracker.css'
 const ProjectTracker = () => {
     const [data, setData] = useLocalStorage('projects', projectData);
     return (

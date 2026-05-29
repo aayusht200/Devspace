@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
-import { padNum } from '../helperFunctions/functions';
-import Card from './Card/Card';
+import { padNum } from '../../helperFunctions/functions.js';
+import './Clock.css';
+import Card from '../Card/Card.jsx';
 const Clock = () => {
     const [time, setTime] = useState(new Date());
     useEffect(() => {

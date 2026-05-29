@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
-import { padNum } from '../helperFunctions/functions';
-import { pomodoroMode } from '../data/data';
-import Button from './Button/Button';
-import Card from './Card/Card';
-import useLocalStorage from '../hooks/useLocalStorage';
+import { padNum } from '../../helperFunctions/functions.js';
+import { pomodoroMode } from '../../data/data.js';
+import Button from '../Button/Button.jsx';
+import Card from '../Card/Card.jsx';
+import useLocalStorage from '../../hooks/useLocalStorage.js';
+import './Pomodoro.css';
+
 const Pomodoro = () => {
     const [data, setData] = useLocalStorage('pomodoro', pomodoroMode);
     const [timer, setTimer] = useState(data.pomodoro);

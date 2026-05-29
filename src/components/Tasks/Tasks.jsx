@@ -1,6 +1,7 @@
-import { tasksData } from '../data/data';
-import useLocalStorage from '../hooks/useLocalStorage';
-import Card from './Card/Card';
+import { tasksData } from '../../data/data';
+import useLocalStorage from '../../hooks/useLocalStorage';
+import Card from '../Card/Card.jsx';
+import './Tasks.css';
 const Tasks = () => {
     const [data, setData] = useLocalStorage('tasks', tasksData);
     const activeTasks = Object.entries(data).filter(([id, task]) => {
