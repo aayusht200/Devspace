@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { padNum } from '../../helperFunctions/functions.js';
 import './Clock.css';
 import Card from '../Card/Card.jsx';
-const Clock = () => {
+const Clock = ({ className }) => {
     const [time, setTime] = useState(new Date());
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -13,7 +13,7 @@ const Clock = () => {
     const date = formatDate(time);
     const currTime = formatTime(time);
     return (
-        <Card className="currDate" header="Clock">
+        <Card className={`currDate ${className}`} header="Clock">
             <div className="time">
                 {currTime.hour}:{currTime.minutes}:{currTime.seconds} {currTime.meridian}
             </div>

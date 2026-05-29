@@ -2,7 +2,7 @@ import { tasksData } from '../../data/data';
 import useLocalStorage from '../../hooks/useLocalStorage';
 import Card from '../Card/Card.jsx';
 import './Tasks.css';
-const Tasks = () => {
+const Tasks = ({ className }) => {
     const [data, setData] = useLocalStorage('tasks', tasksData);
     const activeTasks = Object.entries(data).filter(([id, task]) => {
         return task.status === 'active';
@@ -18,7 +18,7 @@ const Tasks = () => {
         }));
     }
     return (
-        <Card className="task-list" header="Tasks">
+        <Card className={`task-list ${className}`} header="Tasks">
             <p className="task-header">Active Tasks</p>
             {activeTasks.map(([id, task]) => {
                 return <Task task={task} key={id} onChange={handleCheck} id={id} />;

@@ -6,7 +6,7 @@ import Card from '../Card/Card.jsx';
 import useLocalStorage from '../../hooks/useLocalStorage.js';
 import './Pomodoro.css';
 
-const Pomodoro = () => {
+const Pomodoro = ({ className }) => {
     const [data, setData] = useLocalStorage('pomodoro', pomodoroMode);
     const [timer, setTimer] = useState(data.pomodoro);
     function setMode(currMode) {
@@ -34,7 +34,7 @@ const Pomodoro = () => {
         setTimer((prev) => ({ ...prev, isRunning: !prev.isRunning }));
     }
     return (
-        <Card className="pomodoro-timer" header="Pomodoro Timer">
+        <Card className={`pomodoro-timer ${className}`} header="Pomodoro Timer">
             <div className="header-pomodoro">
                 <Button className="pomodoro" onClick={() => setMode('pomodoro')}>
                     Pomodoro

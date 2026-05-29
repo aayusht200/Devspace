@@ -4,10 +4,10 @@ import { gitData } from '../../GitHubData/gitData';
 import Card from '../Card/Card.jsx';
 import { padNum } from '../../helperFunctions/functions';
 
-const Github = () => {
+const Github = ({ className }) => {
     const [data] = useLocalStorage('github', gitData);
     return (
-        <Card className="github-data" header="Github">
+        <Card className={`github-data ${className}`} header="Github">
             <div className="profile-info">
                 <div className="profile-picture-container">
                     <img src={data.avatarUrl} alt="github-profile-picture" className="profile-picture" />

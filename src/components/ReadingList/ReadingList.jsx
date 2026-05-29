@@ -3,12 +3,12 @@ import { bookData } from '../../data/data';
 import Card from '../Card/Card';
 import StatusBar from '../StatusBar/StatusBar';
 import useLocalStorage from '../../hooks/useLocalStorage';
-import './ReadingList.css'
-const ReadingList = () => {
+import './ReadingList.css';
+const ReadingList = ({ className }) => {
     const [books, setBooks] = useLocalStorage('books', bookData);
 
     return (
-        <Card className="reading-list" header="Reading List">
+        <Card className={`reading-list ${className}`} header="Reading List">
             {Object.entries(books)
                 .slice(0, 3)
                 .map(([uuid, currBook]) => (

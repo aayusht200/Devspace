@@ -4,11 +4,11 @@ import Card from '../Card/Card.jsx';
 import { toCapitalize } from '../../helperFunctions/functions.js';
 import StatusBar from '../StatusBar/StatusBar.jsx';
 import useLocalStorage from '../../hooks/useLocalStorage.js';
-import './projectTracker.css'
-const ProjectTracker = () => {
+import './projectTracker.css';
+const ProjectTracker = ({ className }) => {
     const [data, setData] = useLocalStorage('projects', projectData);
     return (
-        <Card className="project-tracker" header="Projects">
+        <Card className={`project-tracker ${className}`} header="Projects">
             {Object.entries(data)
                 .slice(0, 3)
                 .map(([id, currData]) => (
