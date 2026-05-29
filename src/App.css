@@ -1,0 +1,34 @@
+.heat-map {
+    display: flex;
+    width: fit-content;
+    gap: 0.2rem;
+}
+
+.map-block {
+    border: 1px solid;
+    border-radius: 0.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: clamp(10px, 20px, 40px);
+    width: clamp(10px, 20px, 40px);
+}
+.hover-text {
+    cursor: default;
+    display: none;
+}
+.map-block:hover .hover-text {
+    display: block;
+}
+.FOURTH_QUARTILE {
+    background-color: rgb(23, 112, 47);
+}
+.FIRST_QUARTILE {
+    background-color: rgba(23, 112, 47, 0.25);
+}
+.SECOND_QUARTILE {
+    background-color: rgba(23, 112, 47, 0.5);
+}
+.THIRD_QUARTILE {
+    background-color: rgba(23, 112, 47, 0.75);
+}
