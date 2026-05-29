@@ -10,7 +10,7 @@ import './App.css';
 function App() {
     // localStorage.clear();
     return (
-        <div className="grid gap-1 p-1 grid-cols-3 grid-rows-8 w-screen h-screen">
+        <div className="grid gap-1 p-1 grid-cols-3 grid-rows-8 w-screen h-screen ">
             {/* col-1 */}
             <Clock className="col-start-1 row-span-2" />
             <ReadingList className="col-start-1 row-span-3" />

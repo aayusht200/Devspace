@@ -7,7 +7,7 @@ import { padNum } from '../../helperFunctions/functions';
 const Github = ({ className }) => {
     const [data] = useLocalStorage('github', gitData);
     return (
-        <Card className={`github-data ${className}`} header="Github">
+        <Card className={`github-data ${className} hidden`} header="Github">
             <div className="profile-info">
                 <div className="profile-picture-container">
                     <img src={data.avatarUrl} alt="github-profile-picture" className="profile-picture" />
