@@ -1,0 +1,29 @@
+query {
+    viewer {
+        login
+        avatarUrl
+        name
+        url
+        pinnedItems(first: 10) {
+            edges {
+                node {
+                    ... on Repository {
+                        name
+                        url
+                    }
+                }
+            }
+        }
+        contributionsCollection {
+            contributionCalendar {
+                weeks {
+                    contributionDays {
+                        contributionCount
+                        date
+                        contributionLevel
+                    }
+                }
+            }
+        }
+    }
+}
