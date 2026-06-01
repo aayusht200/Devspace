@@ -12,10 +12,10 @@ function App() {
     return (
         <div className="grid grid-cols-3 grid-rows-8 gap-1 p-1 w-screen h-screen bg-dashboard-bg border-dashboard-bg text-dashboard-bg">
             {/* col-1 */}
-            <Clock className="col-start-1 row-span-2" />
-            <ReadingList className="col-start-1 row-span-3" />
+            <Clock className="col-start-1 row-span-1" />
+            <ReadingList className="col-start-1 row-span-4" />
             <Github className="col-start-1 row-span-2" />
-            <Spotify className="col-start-1 row-span-1 col-span-2" />
+            {/* <Spotify className="col-start-1 row-span-1 col-span-2" /> */}
             {/* col-2 */}
             {/* <Pomodoro className="col-start-2 row-start-1 row-span-1" /> */}
             {/* <ProjectTracker className="col-start-2 row-start-2 row-span-6" /> */}

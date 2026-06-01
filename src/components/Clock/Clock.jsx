@@ -15,13 +15,14 @@ const Clock = ({ className }) => {
     const currTime = formatTime(time);
     return (
         <Card
-            className={`currDate bg-clock-bg border-clock-border text-clock-text ${className} text-center grid text-xxs/snug md:text-xs/snug lg:text-sm/8`}
+            className={`currDate bg-clock-bg border-clock-border text-clock-text ${className} text-center grid text-xxs/snug md:text-xs/snug lg:text-sm/snug items-center`}
             header="Clock"
+            accent="text-clock-accent"
         >
-            <div className="time font-bold">
+            <div className="time font-medium pt-1">
                 {currTime.hour}:{currTime.minutes}:{currTime.seconds} {currTime.meridian}
             </div>
-            <div className="date font-bold">
+            <div className="date font-medium pb-1">
                 {date.day} {date.date} {date.year}
             </div>
         </Card>

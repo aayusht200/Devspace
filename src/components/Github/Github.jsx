@@ -9,8 +9,9 @@ const Github = ({ className }) => {
     const [data] = useLocalStorage('github', gitData);
     return (
         <Card
-            className={`github-data ${className} text-center gap-0.5 w-full h-fit grid text-xxs/snug md:text-xs/snug lg:text-sm/8 bg-github-bg text-github-text `}
+            className={`github-data ${className} text-center gap-0.5 w-full h-fit grid text-xxs/snug md:text-xs/snug lg:text-sm/8 bg-github-bg text-github-text border-github-border`}
             header="Github"
+            accent="text-github-accent"
         >
             <div className="profile-info grid grid-cols-3 items-center pl-2 pr-2 h-fit">
                 <div className="profile-picture-container">

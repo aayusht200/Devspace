@@ -9,6 +9,7 @@ const ReadingList = ({ className }) => {
         <Card
             className={`reading-list ${className} text-reading-text bg-reading-bg border-reading-border text-xxs/snug md:text-xs/snug lg:text-sm/snug gap-1`}
             header="Reading List"
+            accent="text-reading-accent"
         >
             {Object.entries(books)
                 .slice(0, 3)
