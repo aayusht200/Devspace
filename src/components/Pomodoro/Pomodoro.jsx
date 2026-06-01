@@ -39,33 +39,33 @@ const Pomodoro = ({ className }) => {
             header="Pomodoro Timer"
             accent="text-pomodoro-accent"
         >
-            <div className="header-pomodoro grid grid-cols-3 items-center">
+            <div className="header-pomodoro grid grid-cols-3 items-center pb-1">
                 <Button
-                    className="pomodoro w-fit h-fit  bg-pomodoro-accent justify-self-center pl-2 pr-2 rounded"
+                    className="pomodoro w-fit h-fit border-2 border-pomodoro-border text-pomodoro-accent hover:text-pomodoro-text hover:bg-pomodoro-accent justify-self-center pl-2 pr-2 rounded-xl hover:scale-105 duration-150 ease-in-out"
                     onClick={() => setMode('pomodoro')}
                 >
                     Pomodoro
                 </Button>
                 <Button
-                    className="pomodoro w-fit h-fit  justify-self-center bg-pomodoro-accent  pl-2 pr-2 rounded"
+                    className="pomodoro w-fit h-fit border-2 border-pomodoro-border text-pomodoro-accent hover:text-pomodoro-text hover:bg-pomodoro-accent justify-self-center pl-2 pr-2 rounded-xl hover:scale-105 duration-150 ease-in-out"
                     onClick={() => setMode('short')}
                 >
                     Short
                 </Button>
                 <Button
-                    className="pomodoro w-fit h-fit  justify-self-center bg-pomodoro-accent  pl-2 pr-2 rounded"
+                    className="pomodoro w-fit h-fit border-2 border-pomodoro-border text-pomodoro-accent hover:text-pomodoro-text hover:bg-pomodoro-accent justify-self-center pl-2 pr-2 rounded-xl hover:scale-105 duration-150 ease-in-out"
                     onClick={() => setMode('long')}
                 >
                     Long
                 </Button>
             </div>
             <div className="display-timer flex justify-evenly pb-1">
-                <p className="w-fit h-fit self-center bg-pomodoro-accent text-black font-bold  pl-1 pr-1 rounded">
+                <p className="w-fit h-fit self-center bg-pomodoro-accent text-white font-bold border-2 border-pomodoro-border pl-2 pr-2 rounded-xl  hover:text-pomodoro-accent hover:bg-transparent duration-150 ease-in-out">
                     {padNum(Math.floor(timer.totalSeconds / 60))}:{padNum(Math.floor(timer.totalSeconds % 60))}
                 </p>
                 <Button
-                    className="pomodoro  bg-pomodoro-accent  pl-1 pr-1 rounded cursor-pointer "
                     onClick={toggleRunning}
+                    className={`pomodoro w-fit h-fit border-2 ${timer.isRunning ? 'border-pomodoro-border text-pomodoro-accent hover:text-pomodoro-text hover:bg-pomodoro-accent hover:line-through' : 'border-pomodoro-border text-pomodoro-accent hover:text-pomodoro-text hover:bg-green-400'} justify-self-center pl-2 pr-2 rounded-xl hover:scale-105 duration-150 ease-in-out `}
                 >
                     {timer.isRunning ? 'Stop' : 'Start'}
                 </Button>

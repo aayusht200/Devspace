@@ -9,7 +9,7 @@ const Github = ({ className }) => {
     const [data] = useLocalStorage('github', gitData);
     return (
         <Card
-            className={`github-data ${className} text-center gap-0.5 w-full h-fit grid text-xxs/snug md:text-xs/snug lg:text-sm/8 bg-github-bg text-github-text border-github-border`}
+            className={`github-data ${className} text-center gap-0.5 w-full h-full grid text-xxs/snug md:text-xs/snug lg:text-sm/8 bg-github-bg text-github-text border-github-border`}
             header="Github"
             accent="text-github-accent"
         >
@@ -82,7 +82,7 @@ function RenderDay({ day }) {
         >
             <div className="hidden group-hover:flex flex-col absolute bottom-full left-1/2 -translate-x-1/2 mb-1 whitespace-nowrap text-wrap rounded px-0.5 py-px text-label-xxxs  md:text-xxs lg:text-sm leading-none bg-bgColor-hover z-10">
                 <span>
-                    {day.contributionCount} contributions on {monthNames[date.getMonth()]} {date.getDate()}
+                    {day.contributionCount} contributions on {monthNames[date.getMonth()].slice(0, 3)} {date.getDate()}
                 </span>
             </div>
         </div>
