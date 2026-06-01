@@ -1,15 +1,20 @@
 import Button from '../Button/Button';
 import './Card.css';
-const Card = ({ children, className = '', header = '' }) => {
+const Card = ({ children, className = '', header = '', onOpen = null }) => {
     if (children == null) return null;
     return (
-        <div className={`card ${className} border-1 p-2 grid grid-rows-6 border-gray-300 border-r-2`}>
-            <div className="card-body row-span-5 w-full h-full border-b border-gray-400">
-                <h1 className="card-header">{header}</h1>
+        <div className={`card ${className} rounded-sm  md:rounded-lg lg:rounded-xl p-2`}>
+            <div className="card-body border-b border-inherit grid gap-1 ">
+                <h1 className="card-header font-extrabold border-b border-inherit ">{header}</h1>
                 {children}
             </div>
             <div className="card-footer flex justify-end mr-4 items-center">
-                <Button className="card-button">⤍</Button>
+                <Button
+                    className="card-button text-lg/snug md:text-lg/snug lg:text-xl/8 cursor-pointer hover:scale-150 "
+                    onClick={onOpen}
+                >
+                    ⤍
+                </Button>
             </div>
         </div>
     );

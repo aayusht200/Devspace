@@ -1,13 +1,8 @@
 .status-bar {
-    background-color: white;
-    border: 1px solid;
     position: relative;
-    height: 20px;
-    overflow: hidden;
 }
 
 .fill-level {
-    background-color: rgba(140, 253, 140, 0.808);
     height: 100%;
     transition: width 0.5s ease;
 }

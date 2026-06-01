@@ -13,11 +13,14 @@ const Clock = ({ className }) => {
     const date = formatDate(time);
     const currTime = formatTime(time);
     return (
-        <Card className={`currDate ${className}`} header="Clock">
-            <div className="time">
+        <Card
+            className={`currDate bg-clock-bg border-clock-border text-clock-text ${className} text-center grid text-xxs/snug md:text-xs/snug lg:text-sm/8`}
+            header="Clock"
+        >
+            <div className="time font-bold">
                 {currTime.hour}:{currTime.minutes}:{currTime.seconds} {currTime.meridian}
             </div>
-            <div className="date">
+            <div className="date font-bold">
                 {date.day} {date.date} {date.year}
             </div>
         </Card>
