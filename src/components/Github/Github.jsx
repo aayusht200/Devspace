@@ -7,20 +7,29 @@ import { padNum } from '../../helperFunctions/functions';
 const Github = ({ className }) => {
     const [data] = useLocalStorage('github', gitData);
     return (
-        <Card className={`github-data ${className} hidden`} header="Github">
-            <div className="profile-info">
+        <Card
+            className={`github-data ${className} text-center gap-0.5 w-full h-fit grid text-xxs/snug md:text-xs/snug lg:text-sm/8 bg-github-bg text-github-text `}
+            header="Github"
+        >
+            <div className="profile-info grid grid-cols-3 items-center pl-2 pr-2 h-fit">
                 <div className="profile-picture-container">
-                    <img src={data.avatarUrl} alt="github-profile-picture" className="profile-picture" />
-                </div>
-                <div className="user-info">
-                    <p className="user-name">{data.name}</p>
-                    <p className="user-id">{data.login}</p>
-                </div>
-                <div className="user-link">
                     <a href={data.url} className="link" target="_blank" rel="noopener noreferrer">
                         <img
-                            width="30"
-                            height="30"
+                            src={data.avatarUrl}
+                            alt="github-profile-picture"
+                            className="profile-picture w-4 md:w-6 lg:w-8 rounded-3xl aspect-auto "
+                        />
+                    </a>
+                </div>
+                <div className="user-info ">
+                    <a href={data.url} className="link " target="_blank" rel="noopener noreferrer">
+                        {data.name}
+                    </a>
+                </div>
+                <div className="user-link justify-self-end">
+                    <a href={data.url} className="link" target="_blank" rel="noopener noreferrer">
+                        <img
+                            className="w-4 aspect-square md:w-6 lg:w-8"
                             src="https://img.icons8.com/ios-glyphs/30/github.png"
                             alt="github"
                         />
@@ -34,7 +43,7 @@ const Github = ({ className }) => {
 
 function RenderMap({ weeks }) {
     return (
-        <div className="heat-map">
+        <div className="heat-map flex justify-evenly pb-1">
             {weeks.map((week, index) => (
                 <RenderWeek key={`week-${index}`} week={week.contributionDays} />
             ))}
@@ -65,10 +74,12 @@ function RenderWeek({ week }) {
 
 function RenderDay({ day }) {
     return (
-        <div className={`map-block ${day.contributionLevel}`}>
-            <div className="hover-text">
-                <p className="contribution-count">Contribution:{day.contributionCount}</p>
-                <p className="date">Date:{day.date}</p>
+        <div
+            className={`map-block ${day.contributionLevel} w-0.5 h-0.5 md:h-1 md:w-1 lg:h-1.5 lg:w-1.5 border rounded-2xl group relative`}
+        >
+            <div className="hidden group-hover:flex flex-col absolute bottom-full left-1/2 -translate-x-1/2 mb-1 whitespace-nowrap rounded px-0.5 py-px text-label-xxxs  md:text-xxs lg:text-sm leading-none bg-github-accent z-10">
+                <span>Count: {day.contributionCount}</span>
+                <span>{day.date}</span>
             </div>
         </div>
     );

@@ -1,0 +1,19 @@
+.NONE {
+    background-color: hsl(210, 17%, 93%);
+}
+
+.FIRST_QUARTILE {
+    background-color: hsl(130, 64%, 81%);
+}
+
+.SECOND_QUARTILE {
+    background-color: hsl(132, 54%, 64%);
+}
+
+.THIRD_QUARTILE {
+    background-color: hsl(134, 61%, 41%);
+}
+
+.FOURTH_QUARTILE {
+    background-color: hsl(135, 69%, 23%);
+}

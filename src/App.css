@@ -3,7 +3,7 @@
 @theme {
     /* Typography */
     --text-xxs: 0.5rem;
-
+    --text-label-xxxs: 0.25rem;
     /* Base Dashboard */
     --color-dashboard-bg: hsl(220, 15%, 10%);
     --color-dashboard-border: hsl(220, 15%, 20%);
@@ -39,6 +39,7 @@
     --color-github-border: hsl(220, 15%, 30%);
     --color-github-text: hsl(220, 20%, 95%);
     --color-github-accent: hsl(220, 80%, 60%);
+    --color-github-dot: hsl(212, 92%, 45%);
 
     /* Spotify */
     --color-spotify-bg: hsl(142, 70%, 15%);
@@ -51,5 +52,4 @@
     --color-projects-border: hsl(30, 60%, 30%);
     --color-projects-text: hsl(30, 20%, 95%);
     --color-projects-accent: hsl(30, 90%, 60%);
-    
 }
