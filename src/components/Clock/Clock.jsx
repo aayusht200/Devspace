@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { padNum } from '../../helperFunctions/functions.js';
 import './Clock.css';
 import Card from '../Card/Card.jsx';
+import { dayNames } from '../../data/data.js';
 const Clock = ({ className }) => {
     const [time, setTime] = useState(new Date());
     useEffect(() => {
@@ -28,7 +29,6 @@ const Clock = ({ className }) => {
 };
 
 function formatDate(time) {
-    const dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     return { date: time.getDate(), day: dayNames[time.getDay()], year: time.getFullYear() };
 }
 function formatTime(time) {

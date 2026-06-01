@@ -39,7 +39,13 @@
     --color-github-border: hsl(220, 15%, 30%);
     --color-github-text: hsl(220, 20%, 95%);
     --color-github-accent: hsl(220, 80%, 60%);
-    --color-github-dot: hsl(212, 92%, 45%);
+    --color-github-map-bg: hsl(216, 28%, 7%);
+    --color-default-bgColor-0: #151b23;
+    --color-default-bgColor-1: #033a16;
+    --color-default-bgColor-2: #196c2e;
+    --color-default-bgColor-3: #2ea043;
+    --color-default-bgColor-4: #56d364;
+    --color-bgColor-hover: #262c36;
 
     /* Spotify */
     --color-spotify-bg: hsl(142, 70%, 15%);

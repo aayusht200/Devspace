@@ -3,6 +3,7 @@ import './github.css';
 import { gitData } from '../../GitHubData/gitData';
 import Card from '../Card/Card.jsx';
 import { padNum } from '../../helperFunctions/functions';
+import { monthNames } from '../../data/data.js';
 
 const Github = ({ className }) => {
     const [data] = useLocalStorage('github', gitData);
@@ -43,7 +44,7 @@ const Github = ({ className }) => {
 
 function RenderMap({ weeks }) {
     return (
-        <div className="heat-map flex justify-evenly pb-1">
+        <div className="heat-map flex justify-evenly bg-github-map-bg p-1 rounded-xs">
             {weeks.map((week, index) => (
                 <RenderWeek key={`week-${index}`} week={week.contributionDays} />
             ))}
@@ -64,7 +65,7 @@ function RenderWeek({ week }) {
         paddedWeek.push(dummyData);
     }
     return (
-        <div className="week">
+        <div className="week grid gap-0.5">
             {paddedWeek.map((day) => (
                 <RenderDay key={day.date} day={day} />
             ))}
@@ -73,13 +74,15 @@ function RenderWeek({ week }) {
 }
 
 function RenderDay({ day }) {
+    const date = new Date(day.date);
     return (
         <div
-            className={`map-block ${day.contributionLevel} w-0.5 h-0.5 md:h-1 md:w-1 lg:h-1.5 lg:w-1.5 border rounded-2xl group relative`}
+            className={`map-block ${day.contributionLevel} h-0.5 md:h-1  lg:h-1.5 aspect-square border-0 rounded group relative`}
         >
-            <div className="hidden group-hover:flex flex-col absolute bottom-full left-1/2 -translate-x-1/2 mb-1 whitespace-nowrap rounded px-0.5 py-px text-label-xxxs  md:text-xxs lg:text-sm leading-none bg-github-accent z-10">
-                <span>Count: {day.contributionCount}</span>
-                <span>{day.date}</span>
+            <div className="hidden group-hover:flex flex-col absolute bottom-full left-1/2 -translate-x-1/2 mb-1 whitespace-nowrap rounded px-0.5 py-px text-label-xxxs  md:text-xxs lg:text-sm leading-none bg-bgColor-hover z-10">
+                <span>
+                    {day.contributionCount} contributions on {monthNames[date.getMonth()]} {date.getDate()}
+                </span>
             </div>
         </div>
     );
