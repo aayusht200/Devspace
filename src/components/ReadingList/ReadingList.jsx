@@ -7,7 +7,7 @@ const ReadingList = ({ className }) => {
     const [books] = useLocalStorage('books', bookData);
     return (
         <Card
-            className={`reading-list ${className} text-reading-text bg-reading-bg border-reading-border text-xxs/snug md:text-xs/snug lg:text-sm/snug gap-1`}
+            className={`reading-list ${className} text-reading-text bg-reading-bg border-reading-border  text-center text-xxs/snug md:text-xs/snug lg:text-sm/snug gap-1`}
             header="Reading List"
             accent="text-reading-accent"
         >
@@ -24,10 +24,16 @@ function BookInfo({ book }) {
         <div className="book-info grid grid-rows-2 gap-1">
             <div className="book-info-header grid grid-cols-2">
                 <div className="book-title font-medium">Title : {book.title}</div>
+
                 <div className="book-author font-light">Author : {book.author}</div>
             </div>
-            <div className="book-info-base font-light">
-                <StatusBar current={book.currentPage} total={book.totalPage} className="h-4 rounded-lg" />
+            <div className="book-info-base">
+                Read : {book.currentPage} Total : {book.totalPage}
+                <StatusBar
+                    current={book.currentPage}
+                    total={book.totalPage}
+                    className="h-4 rounded-lg font-light text-black"
+                />
             </div>
         </div>
     );

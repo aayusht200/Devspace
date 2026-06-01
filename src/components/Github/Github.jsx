@@ -80,7 +80,7 @@ function RenderDay({ day }) {
         <div
             className={`map-block ${day.contributionLevel} h-0.5 md:h-1  lg:h-1.5 aspect-square border-0 rounded group relative`}
         >
-            <div className="hidden group-hover:flex flex-col absolute bottom-full left-1/2 -translate-x-1/2 mb-1 whitespace-nowrap rounded px-0.5 py-px text-label-xxxs  md:text-xxs lg:text-sm leading-none bg-bgColor-hover z-10">
+            <div className="hidden group-hover:flex flex-col absolute bottom-full left-1/2 -translate-x-1/2 mb-1 whitespace-nowrap text-wrap rounded px-0.5 py-px text-label-xxxs  md:text-xxs lg:text-sm leading-none bg-bgColor-hover z-10">
                 <span>
                     {day.contributionCount} contributions on {monthNames[date.getMonth()]} {date.getDate()}
                 </span>

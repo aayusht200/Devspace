@@ -17,8 +17,8 @@ function App() {
             <Github className="col-start-1 row-span-2" />
             {/* <Spotify className="col-start-1 row-span-1 col-span-2" /> */}
             {/* col-2 */}
-            {/* <Pomodoro className="col-start-2 row-start-1 row-span-1" /> */}
-            {/* <ProjectTracker className="col-start-2 row-start-2 row-span-6" /> */}
+            <Pomodoro className="col-start-2 row-start-1 row-span-1" />
+            <ProjectTracker className="col-start-2 row-start-2 row-span-6" />
             {/* col-3 */}
             {/* <Tasks className="col-start-3 row-start-1 row-span-8" /> */}
         </div>

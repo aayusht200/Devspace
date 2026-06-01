@@ -34,23 +34,39 @@ const Pomodoro = ({ className }) => {
         setTimer((prev) => ({ ...prev, isRunning: !prev.isRunning }));
     }
     return (
-        <Card className={`pomodoro-timer ${className}`} header="Pomodoro Timer">
-            <div className="header-pomodoro">
-                <Button className="pomodoro" onClick={() => setMode('pomodoro')}>
+        <Card
+            className={`pomodoro-timer ${className} text-center  bg-pomodoro-bg text-pomodoro-text border-pomodoro-border text-xxs/snug md:text-xs/snug lg:text-sm/snug items-center`}
+            header="Pomodoro Timer"
+            accent="text-pomodoro-accent"
+        >
+            <div className="header-pomodoro grid grid-cols-3 items-center">
+                <Button
+                    className="pomodoro w-fit h-fit  bg-pomodoro-accent justify-self-center pl-2 pr-2 rounded"
+                    onClick={() => setMode('pomodoro')}
+                >
                     Pomodoro
                 </Button>
-                <Button className="pomodoro" onClick={() => setMode('short')}>
+                <Button
+                    className="pomodoro w-fit h-fit  justify-self-center bg-pomodoro-accent  pl-2 pr-2 rounded"
+                    onClick={() => setMode('short')}
+                >
                     Short
                 </Button>
-                <Button className="pomodoro" onClick={() => setMode('long')}>
+                <Button
+                    className="pomodoro w-fit h-fit  justify-self-center bg-pomodoro-accent  pl-2 pr-2 rounded"
+                    onClick={() => setMode('long')}
+                >
                     Long
                 </Button>
             </div>
-            <div className="display-timer">
-                {padNum(Math.floor(timer.totalSeconds / 60))}:{padNum(Math.floor(timer.totalSeconds % 60))}
-            </div>
-            <div className="footer-pomodoro">
-                <Button className="pomodoro" onClick={toggleRunning}>
+            <div className="display-timer flex justify-evenly pb-1">
+                <p className="w-fit h-fit self-center bg-pomodoro-accent text-black font-bold  pl-1 pr-1 rounded">
+                    {padNum(Math.floor(timer.totalSeconds / 60))}:{padNum(Math.floor(timer.totalSeconds % 60))}
+                </p>
+                <Button
+                    className="pomodoro  bg-pomodoro-accent  pl-1 pr-1 rounded cursor-pointer "
+                    onClick={toggleRunning}
+                >
                     {timer.isRunning ? 'Stop' : 'Start'}
                 </Button>
             </div>

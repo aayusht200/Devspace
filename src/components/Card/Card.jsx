@@ -10,7 +10,7 @@ const Card = ({ children, className = '', header = '', onOpen = null, accent = '
             </div>
             <div className="card-footer flex justify-end mr-4 items-center">
                 <Button
-                    className={`card-button text-lg/snug md:text-lg/snug lg:text-xl/8 cursor-pointer hover:scale-150 ${accent}`}
+                    className={`card-button text-lg/snug md:text-xl/snug lg:text-2xl/8  ${accent}`}
                     onClick={onOpen}
                 >
                     ⤍
