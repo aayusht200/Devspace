@@ -11,14 +11,14 @@ const Dashboard = () => {
 		<div className="bg-dashboard-bg border-dashboard-bg text-dashboard-bg grid h-screen w-screen grid-cols-3 grid-rows-8 gap-1 p-1">
 			{/* col-1 */}
 			<ClockWidget className="col-start-1 row-span-1" />
-			{/* <ReadingListWidget className="col-start-1 row-span-4" /> */}
+			<ReadingListWidget className="col-start-1 row-span-4" />
 			<GithubWidget className="col-start-1 row-span-2" />
 			<SpotifyWidget className="col-span-2 col-start-1 row-span-1" />
 			{/* col-2 */}
 			<PomodoroWidget className="col-start-2 row-span-1 row-start-1" />
-			{/* <ProjectTrackerWidget className="col-start-2 row-span-6 row-start-2" /> */}
+			<ProjectTrackerWidget className="col-start-2 row-span-6 row-start-2" />
 			{/* col-3 */}
-			{/* <TasksWidget className="col-start-3 row-span-8 row-start-1" /> */}
+			<TasksWidget className="col-start-3 row-span-8 row-start-1" />
 		</div>
 	);
 };

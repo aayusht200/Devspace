@@ -1,17 +1,18 @@
+import { useContext } from 'react';
+import { DataContext } from '../../context/DataContext.js';
 import { toCapitalize } from '../../helperFunctions/functions.js';
 import CardWidget from '../Card/CardWidget.jsx';
 import StatusBar from '../StatusBar/StatusBar.jsx';
 import './projectTracker.css';
 const ProjectTracker = ({ className }) => {
 	const { data, setData } = useContext(DataContext);
-	const projectData = data.project;
 	return (
 		<CardWidget
 			className={`project-tracker ${className} text-xxs/snug bg-projects-bg border-projects-border text-projects-text flex items-start text-center md:text-xs/snug lg:text-sm/snug`}
 			accent="text-projects-accent"
 			header="Projects"
 		>
-			{Object.entries(data)
+			{Object.entries(data.project)
 				.slice(0, 3)
 				.map(([id, currData]) => (
 					<ProjectInfo project={currData} key={id} />

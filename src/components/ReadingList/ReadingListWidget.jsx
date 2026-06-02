@@ -1,18 +1,18 @@
 import CardWidget from '../Card/CardWidget';
 import StatusBar from '../StatusBar/StatusBar';
-import useLocalStorage from '../../hooks/useLocalStorage';
+import { DataContext } from '../../context/DataContext';
 import './ReadingList.css';
 import { useContext } from 'react';
+
 const ReadingListWidget = ({ className }) => {
 	const { data, setData } = useContext(DataContext);
-	const books = data.book;
 	return (
 		<CardWidget
 			className={`reading-list ${className} text-reading-text bg-reading-bg border-reading-border text-xxs/snug text-center md:text-xs/snug lg:text-sm/snug`}
 			header="Reading List"
 			accent="text-reading-accent"
 		>
-			{Object.entries(books)
+			{Object.entries(data.book)
 				.slice(0, 3)
 				.map(([uuid, currBook]) => (
 					<BookInfo book={currBook} key={uuid} />

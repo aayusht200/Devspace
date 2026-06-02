@@ -3,62 +3,54 @@ import { padNum } from '../../helperFunctions/functions.js';
 import Button from '../Button/Button.jsx';
 import CardWidget from '../Card/CardWidget.jsx';
 import './Pomodoro.css';
-
+import { DataContext } from '../../context/DataContext.js';
 const PomodoroWidget = ({ className }) => {
 	const { data, setData } = useContext(DataContext);
-	const [mode, setMode] = useState('pomodoro');
-	const timer = data.pomodoro[mode];
-	function handleModeChange(currMode) {
-		setMode(currMode);
+	const timer = data.pomodoro.modes[data.pomodoro.currMode];
+	function handleModeChange(value) {
+		setData((prev) => ({
+			...prev,
+			pomodoro: { ...prev.pomodoro, currMode: value },
+		}));
 	}
-	useEffect(() => {
-		if (!timer.isRunning) return;
-
-		const intervalId = setInterval(() => {
-			setData((prev) => {
-				const currentTimer = prev.pomodoro[mode];
-
-				if (currentTimer.totalSeconds === 0) {
-					return {
-						...prev,
-						pomodoro: {
-							...prev.pomodoro,
-							[mode]: {
-								...currentTimer,
-								isRunning: false,
-							},
-						},
-					};
-				}
-
-				return {
-					...prev,
-					pomodoro: {
-						...prev.pomodoro,
-						[mode]: {
-							...currentTimer,
-							totalSeconds:
-								currentTimer.totalSeconds - 1,
-						},
-					},
-				};
-			});
-		}, 1000);
-
-		return () => clearInterval(intervalId);
-	}, [timer.isRunning, mode, setData]);
 	function toggleRunning() {
 		setData((prev) => ({
 			...prev,
 			pomodoro: {
 				...prev.pomodoro,
-				[mode]: {
-					...prev.pomodoro[mode],
-					isRunning: !prev.pomodoro[mode].isRunning,
+				modes: {
+					...prev.pomodoro.modes,
+					[timer.mode]: {
+						...prev.pomodoro.modes[timer.mode],
+						isRunning:
+							!prev.pomodoro.modes[timer.mode]
+								.isRunning,
+					},
 				},
 			},
 		}));
 	}
+	useEffect(() => {
+		if (!timer.isRunning) return;
+		const interval = setInterval(() => {
+			setData((prev) => ({
+				...prev,
+				pomodoro: {
+					...prev.pomodoro,
+					modes: {
+						...prev.pomodoro.modes,
+						[timer.mode]: {
+							...prev.pomodoro.modes[timer.mode],
+							totalSeconds:
+								prev.pomodoro.modes[timer.mode]
+									.totalSeconds - 1,
+						},
+					},
+				},
+			}));
+		}, 1000);
+		return () => clearInterval(interval);
+	}, [timer.isRunning, setData]);
 	return (
 		<CardWidget
 			className={`pomodoro-timer ${className} bg-pomodoro-bg text-pomodoro-text border-pomodoro-border text-xxs/snug items-center text-center md:text-xs/snug lg:text-sm/snug`}
