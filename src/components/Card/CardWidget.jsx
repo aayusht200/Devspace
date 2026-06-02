@@ -1,10 +1,10 @@
 import Button from '../Button/Button';
-import './Card.css';
-const Card = ({ children, className = '', header = '', onOpen = null, accent = 'white' }) => {
+import './CardWidget.css';
+const CardWidget = ({ children, className = '', header = '', onOpen = null, accent = 'white' }) => {
     if (children == null) return null;
     return (
-        <div className={`card ${className} rounded-sm  md:rounded-lg lg:rounded-xl p-2 text-wrap`}>
-            <div className="card-body border-inherit grid gap-1 ">
+        <div className={`card ${className} rounded-sm  md:rounded-lg lg:rounded-xl p-2 text-wrap grid grid-rows-10`}>
+            <div className="card-body border-inherit grid gap-1 row-span-9">
                 <h1 className="card-header font-extrabold border-b border-inherit h-fit">{header}</h1>
                 {children}
             </div>
@@ -20,4 +20,4 @@ const Card = ({ children, className = '', header = '', onOpen = null, accent = '
     );
 };
 
-export default Card;
+export default CardWidget;

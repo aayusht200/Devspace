@@ -1,16 +1,16 @@
 import useLocalStorage from '../../hooks/useLocalStorage';
-import Card from '../Card/Card';
+import CardWidget from '../Card/CardWidget';
 
-const Spotify = ({ className }) => {
+const SpotifyWidget = ({ className }) => {
     const [data, setData] = useLocalStorage('spotify', { test: 'dummy' });
     return (
-        <Card
+        <CardWidget
             className={`spotify ${className} bg-spotify-bg text-spotify-text border-spotify-border`}
             header="Spotify"
             accent="text-spotify-accent"
         >
             <h3>Place Holder Card</h3>
-        </Card>
+        </CardWidget>
     );
 };
-export default Spotify;
+export default SpotifyWidget;

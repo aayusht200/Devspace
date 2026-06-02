@@ -2,11 +2,11 @@ import { useEffect, useState } from 'react';
 import { padNum } from '../../helperFunctions/functions.js';
 import { pomodoroMode } from '../../data/data.js';
 import Button from '../Button/Button.jsx';
-import Card from '../Card/Card.jsx';
+import CardWidget from '../Card/CardWidget.jsx';
 import useLocalStorage from '../../hooks/useLocalStorage.js';
 import './Pomodoro.css';
 
-const Pomodoro = ({ className }) => {
+const PomodoroWidget = ({ className }) => {
     const [data, setData] = useLocalStorage('pomodoro', pomodoroMode);
     const [timer, setTimer] = useState(data.pomodoro);
     function setMode(currMode) {
@@ -34,7 +34,7 @@ const Pomodoro = ({ className }) => {
         setTimer((prev) => ({ ...prev, isRunning: !prev.isRunning }));
     }
     return (
-        <Card
+        <CardWidget
             className={`pomodoro-timer ${className} text-center  bg-pomodoro-bg text-pomodoro-text border-pomodoro-border text-xxs/snug md:text-xs/snug lg:text-sm/snug items-center`}
             header="Pomodoro Timer"
             accent="text-pomodoro-accent"
@@ -70,8 +70,8 @@ const Pomodoro = ({ className }) => {
                     {timer.isRunning ? 'Stop' : 'Start'}
                 </Button>
             </div>
-        </Card>
+        </CardWidget>
     );
 };
 
-export default Pomodoro;
+export default PomodoroWidget;

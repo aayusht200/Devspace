@@ -1,14 +1,14 @@
 import useLocalStorage from '../../hooks/useLocalStorage';
 import './github.css';
 import { gitData } from '../../GitHubData/gitData';
-import Card from '../Card/Card.jsx';
+import CardWidget from '../Card/CardWidget.jsx';
 import { padNum } from '../../helperFunctions/functions';
 import { monthNames } from '../../data/data.js';
 
-const Github = ({ className }) => {
+const GithubWidget = ({ className }) => {
     const [data] = useLocalStorage('github', gitData);
     return (
-        <Card
+        <CardWidget
             className={`github-data ${className} text-center gap-0.5 w-full h-full grid text-xxs/snug md:text-xs/snug lg:text-sm/8 bg-github-bg text-github-text border-github-border`}
             header="Github"
             accent="text-github-accent"
@@ -39,7 +39,7 @@ const Github = ({ className }) => {
                 </div>
             </div>
             <RenderMap weeks={data.contributionCalendar.weeks} />
-        </Card>
+        </CardWidget>
     );
 };
 
@@ -89,4 +89,4 @@ function RenderDay({ day }) {
     );
 }
 
-export default Github;
+export default GithubWidget;

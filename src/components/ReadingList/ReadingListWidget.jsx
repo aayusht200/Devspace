@@ -1,12 +1,12 @@
 import { bookData } from '../../data/data';
-import Card from '../Card/Card';
+import CardWidget from '../Card/CardWidget';
 import StatusBar from '../StatusBar/StatusBar';
 import useLocalStorage from '../../hooks/useLocalStorage';
 import './ReadingList.css';
-const ReadingList = ({ className }) => {
+const ReadingListWidget = ({ className }) => {
     const [books] = useLocalStorage('books', bookData);
     return (
-        <Card
+        <CardWidget
             className={`reading-list ${className} text-reading-text bg-reading-bg border-reading-border  text-center text-xxs/snug md:text-xs/snug lg:text-sm/snug`}
             header="Reading List"
             accent="text-reading-accent"
@@ -16,7 +16,7 @@ const ReadingList = ({ className }) => {
                 .map(([uuid, currBook]) => (
                     <BookInfo book={currBook} key={uuid} />
                 ))}
-        </Card>
+        </CardWidget>
     );
 };
 function BookInfo({ book }) {
@@ -37,4 +37,4 @@ function BookInfo({ book }) {
         </div>
     );
 }
-export default ReadingList;
+export default ReadingListWidget;

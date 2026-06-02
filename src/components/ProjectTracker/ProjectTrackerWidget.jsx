@@ -1,6 +1,6 @@
 import { projectData } from '../../data/data';
 import { useEffect, useState } from 'react';
-import Card from '../Card/Card.jsx';
+import CardWidget from '../Card/CardWidget.jsx';
 import { toCapitalize } from '../../helperFunctions/functions.js';
 import StatusBar from '../StatusBar/StatusBar.jsx';
 import useLocalStorage from '../../hooks/useLocalStorage.js';
@@ -8,7 +8,7 @@ import './projectTracker.css';
 const ProjectTracker = ({ className }) => {
     const [data, setData] = useLocalStorage('projects', projectData);
     return (
-        <Card
+        <CardWidget
             className={`project-tracker ${className} text-xxs/snug md:text-xs/snug lg:text-sm/snug bg-projects-bg border-projects-border text-projects-text text-center flex items-start`}
             accent="text-projects-accent"
             header="Projects"
@@ -18,7 +18,7 @@ const ProjectTracker = ({ className }) => {
                 .map(([id, currData]) => (
                     <ProjectInfo project={currData} key={id} />
                 ))}
-        </Card>
+        </CardWidget>
     );
 };
 

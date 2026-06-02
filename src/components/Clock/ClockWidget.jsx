@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { padNum } from '../../helperFunctions/functions.js';
 import './Clock.css';
-import Card from '../Card/Card.jsx';
+import CardWidget from '../Card/CardWidget.jsx';
 import { dayNames } from '../../data/data.js';
-const Clock = ({ className }) => {
+const ClockWidget = ({ className }) => {
     const [time, setTime] = useState(new Date());
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -14,7 +14,7 @@ const Clock = ({ className }) => {
     const date = formatDate(time);
     const currTime = formatTime(time);
     return (
-        <Card
+        <CardWidget
             className={`currDate bg-clock-bg border-clock-border text-clock-text ${className} text-center grid text-xxs/snug md:text-xs/snug lg:text-sm/snug items-center`}
             header="Clock"
             accent="text-clock-accent"
@@ -25,7 +25,7 @@ const Clock = ({ className }) => {
             <div className="date font-medium pb-1">
                 {date.day} {date.date} {date.year}
             </div>
-        </Card>
+        </CardWidget>
     );
 };
 
@@ -45,4 +45,4 @@ function formatHours(hour) {
     if (hour === 0) return { hour: 12, meridian: 'AM' };
     return { hour: hour > 12 ? hour - 12 : hour, meridian: hour > 11 ? 'PM' : 'AM' };
 }
-export default Clock;
+export default ClockWidget;

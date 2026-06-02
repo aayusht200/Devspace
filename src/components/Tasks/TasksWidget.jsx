@@ -1,9 +1,9 @@
-import { tasksData } from '../../data/data';
+import { tasksData } from '../../data/data.js';
 import { toCapitalize } from '../../helperFunctions/functions.js';
-import useLocalStorage from '../../hooks/useLocalStorage';
-import Card from '../Card/Card.jsx';
+import useLocalStorage from '../../hooks/useLocalStorage.js';
+import CardWidget from '../Card/CardWidget.jsx';
 import './Tasks.css';
-const Tasks = ({ className }) => {
+const TasksWidget = ({ className }) => {
     const [data, setData] = useLocalStorage('tasks', tasksData);
     const activeTasks = Object.entries(data).filter(([id, task]) => {
         return task.status === 'active';
@@ -19,7 +19,7 @@ const Tasks = ({ className }) => {
         }));
     }
     return (
-        <Card
+        <CardWidget
             className={`task-list ${className} text-xxs/snug md:text-xs/snug lg:text-sm/snug bg-tasks-bg border-tasks-border text-tasks-text text-center flex items-start`}
             header="Tasks"
             accent="text-tasks-accent"
@@ -28,7 +28,7 @@ const Tasks = ({ className }) => {
             {activeTasks.map(([id, task]) => {
                 return <Task task={task} key={id} onChange={handleCheck} id={id} />;
             })}
-        </Card>
+        </CardWidget>
     );
 };
 function Task({ task, onChange, id }) {
@@ -53,4 +53,4 @@ function Task({ task, onChange, id }) {
         </div>
     );
 }
-export default Tasks;
+export default TasksWidget;

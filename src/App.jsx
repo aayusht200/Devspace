@@ -1,26 +1,26 @@
-import Clock from './components/Clock/Clock';
-import Pomodoro from './components/Pomodoro/Pomodoro';
-import ReadingList from './components/ReadingList/ReadingList';
-import ProjectTracker from './components/ProjectTracker/ProjectTracker';
-import Tasks from './components/Tasks/Tasks';
-import Github from './components/Github/Github';
-import Spotify from './components/Spotify/Spotify';
 import './App.css';
+import ClockWidget from './components/Clock/ClockWidget';
+import GithubWidget from './components/Github/GithubWidget';
+import PomodoroWidget from './components/Pomodoro/PomodoroWidget';
+import ProjectTrackerWidget from './components/ProjectTracker/ProjectTrackerWidget';
+import ReadingListWidget from './components/ReadingList/ReadingListWidget';
+import SpotifyWidget from './components/Spotify/SpotifyWidget';
+import TasksWidget from './components/Tasks/TasksWidget';
 
 function App() {
-    // localStorage.clear();
+    localStorage.clear();
     return (
         <div className="grid grid-cols-3 grid-rows-8 gap-1 p-1 w-screen h-screen bg-dashboard-bg border-dashboard-bg text-dashboard-bg">
             {/* col-1 */}
-            <Clock className="col-start-1 row-span-1" />
-            <ReadingList className="col-start-1 row-span-4" />
-            <Github className="col-start-1 row-span-2" />
-            <Spotify className="col-start-1 row-span-1 col-span-2" />
+            <ClockWidget className="col-start-1 row-span-1" />
+            <ReadingListWidget className="col-start-1 row-span-4" />
+            <GithubWidget className="col-start-1 row-span-2" />
+            <SpotifyWidget className="col-start-1 row-span-1 col-span-2" />
             {/* col-2 */}
-            <Pomodoro className="col-start-2 row-start-1 row-span-1" />
-            <ProjectTracker className="col-start-2 row-start-2 row-span-6" />
+            <PomodoroWidget className="col-start-2 row-start-1 row-span-1" />
+            <ProjectTrackerWidget className="col-start-2 row-start-2 row-span-6" />
             {/* col-3 */}
-            <Tasks className="col-start-3 row-start-1 row-span-8" />
+            <TasksWidget className="col-start-3 row-start-1 row-span-8" />
         </div>
     );
 }
