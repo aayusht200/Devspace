@@ -1,37 +1,63 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { padNum } from '../../helperFunctions/functions.js';
-import { pomodoroMode } from '../../data/data.js';
 import Button from '../Button/Button.jsx';
 import CardWidget from '../Card/CardWidget.jsx';
-import useLocalStorage from '../../hooks/useLocalStorage.js';
 import './Pomodoro.css';
 
 const PomodoroWidget = ({ className }) => {
-	const [data, setData] = useLocalStorage('pomodoro', pomodoroMode);
-	const [timer, setTimer] = useState(data.pomodoro);
-	function setMode(currMode) {
-		setTimer({ ...data[currMode] });
+	const { data, setData } = useContext(DataContext);
+	const [mode, setMode] = useState('pomodoro');
+	const timer = data.pomodoro[mode];
+	function handleModeChange(currMode) {
+		setMode(currMode);
 	}
 	useEffect(() => {
 		if (!timer.isRunning) return;
+
 		const intervalId = setInterval(() => {
-			setTimer((prev) => {
-				if (prev.totalSeconds === 0) {
+			setData((prev) => {
+				const currentTimer = prev.pomodoro[mode];
+
+				if (currentTimer.totalSeconds === 0) {
 					return {
-						...data[prev.mode],
-						isRunning: false,
+						...prev,
+						pomodoro: {
+							...prev.pomodoro,
+							[mode]: {
+								...currentTimer,
+								isRunning: false,
+							},
+						},
 					};
 				}
+
 				return {
 					...prev,
-					totalSeconds: prev.totalSeconds - 1,
+					pomodoro: {
+						...prev.pomodoro,
+						[mode]: {
+							...currentTimer,
+							totalSeconds:
+								currentTimer.totalSeconds - 1,
+						},
+					},
 				};
 			});
 		}, 1000);
+
 		return () => clearInterval(intervalId);
-	}, [timer.isRunning]);
+	}, [timer.isRunning, mode, setData]);
 	function toggleRunning() {
-		setTimer((prev) => ({ ...prev, isRunning: !prev.isRunning }));
+		setData((prev) => ({
+			...prev,
+			pomodoro: {
+				...prev.pomodoro,
+				[mode]: {
+					...prev.pomodoro[mode],
+					isRunning: !prev.pomodoro[mode].isRunning,
+				},
+			},
+		}));
 	}
 	return (
 		<CardWidget
@@ -42,19 +68,19 @@ const PomodoroWidget = ({ className }) => {
 			<div className="header-pomodoro grid grid-cols-3 items-center pb-1">
 				<Button
 					className="pomodoro border-pomodoro-border text-pomodoro-accent hover:text-pomodoro-text hover:bg-pomodoro-accent h-fit w-fit justify-self-center rounded-xl border-2 pr-2 pl-2 duration-150 ease-in-out hover:scale-105"
-					onClick={() => setMode('pomodoro')}
+					onClick={() => handleModeChange('pomodoro')}
 				>
 					Pomodoro
 				</Button>
 				<Button
 					className="pomodoro border-pomodoro-border text-pomodoro-accent hover:text-pomodoro-text hover:bg-pomodoro-accent h-fit w-fit justify-self-center rounded-xl border-2 pr-2 pl-2 duration-150 ease-in-out hover:scale-105"
-					onClick={() => setMode('short')}
+					onClick={() => handleModeChange('short')}
 				>
 					Short
 				</Button>
 				<Button
 					className="pomodoro border-pomodoro-border text-pomodoro-accent hover:text-pomodoro-text hover:bg-pomodoro-accent h-fit w-fit justify-self-center rounded-xl border-2 pr-2 pl-2 duration-150 ease-in-out hover:scale-105"
-					onClick={() => setMode('long')}
+					onClick={() => handleModeChange('long')}
 				>
 					Long
 				</Button>

@@ -4,7 +4,7 @@ const CardWidget = ({
 	children,
 	className = '',
 	header = '',
-	onOpen = 'null',
+	onOpen = null,
 	accent = 'white',
 }) => {
 	if (children == null) return null;

@@ -1,15 +1,15 @@
 import { useNavigate } from 'react-router-dom';
-import { tasksData } from '../../data/data.js';
 import { toCapitalize } from '../../helperFunctions/functions.js';
-import useLocalStorage from '../../hooks/useLocalStorage.js';
 import CardWidget from '../Card/CardWidget.jsx';
 import './Tasks.css';
 const TasksWidget = ({ className }) => {
-	const [data, setData] = useLocalStorage('tasks', tasksData);
+	const { data, setData } = useContext(DataContext);
+
 	const navigate = useNavigate();
 	const activeTasks = Object.entries(data).filter(([id, task]) => {
 		return task.status === 'active';
 	});
+
 	function handleCheck(id) {
 		setData((prev) => ({
 			...prev,

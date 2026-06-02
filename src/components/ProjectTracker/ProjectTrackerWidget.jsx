@@ -1,12 +1,10 @@
-import { projectData } from '../../data/data';
-import { useEffect, useState } from 'react';
-import CardWidget from '../Card/CardWidget.jsx';
 import { toCapitalize } from '../../helperFunctions/functions.js';
+import CardWidget from '../Card/CardWidget.jsx';
 import StatusBar from '../StatusBar/StatusBar.jsx';
-import useLocalStorage from '../../hooks/useLocalStorage.js';
 import './projectTracker.css';
 const ProjectTracker = ({ className }) => {
-	const [data, setData] = useLocalStorage('projects', projectData);
+	const { data, setData } = useContext(DataContext);
+	const projectData = data.project;
 	return (
 		<CardWidget
 			className={`project-tracker ${className} text-xxs/snug bg-projects-bg border-projects-border text-projects-text flex items-start text-center md:text-xs/snug lg:text-sm/snug`}

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { padNum } from '../../helperFunctions/functions.js';
 import './Clock.css';
 import CardWidget from '../Card/CardWidget.jsx';
