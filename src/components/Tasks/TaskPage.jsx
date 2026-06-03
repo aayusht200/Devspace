@@ -20,11 +20,12 @@ const TaskPage = () => {
                         columns={taskColumns}
                         renderActions={(task, id) => (
                               <div className="action grid">
-                                    <Button onClick={() => editTask(id)}>
+                                    <Button
+                                          onClick={() => {
+                                                navigate(`/tasks/${id}/edit`);
+                                          }}
+                                    >
                                           Edit
-                                    </Button>
-                                    <Button onClick={() => deleteTask(id)}>
-                                          Delete
                                     </Button>
                               </div>
                         )}
