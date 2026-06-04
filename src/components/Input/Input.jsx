@@ -47,6 +47,7 @@ const TextField = ({ context, value, onChange, className }) => {
                         onChange={onChange}
                         type="text"
                         className={className}
+                        required={context.required}
                   />
             </>
       );
@@ -58,7 +59,6 @@ const TextArea = ({ context, value, onChange, className }) => {
                   <textarea
                         id={context.name}
                         name={context.name}
-                        required
                         value={value}
                         onChange={onChange}
                         type="text"

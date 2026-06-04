@@ -3,11 +3,13 @@ export const taskFields = {
             label: 'Title',
             name: 'title',
             type: 'text',
+            required: true,
       },
       description: {
             label: 'Description',
             name: 'description',
             type: 'textarea',
+            required: true,
       },
       status: {
             label: 'Status',
@@ -21,4 +23,11 @@ export const taskFields = {
             type: 'select',
             options: ['project', 'personal', 'fitness'],
       },
+};
+
+export const emptyTask = {
+      title: '',
+      description: '',
+      status: 'pending',
+      category: 'project',
 };

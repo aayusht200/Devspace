@@ -1,6 +1,6 @@
-const TableComponent = ({ data, columns, renderActions }) => {
+const TableComponent = ({ data, columns, renderActions, className }) => {
       return (
-            <table>
+            <table className={`${className}`}>
                   <thead>
                         <tr>
                               {columns.map((col) => (
