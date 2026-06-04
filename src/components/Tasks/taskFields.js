@@ -31,3 +31,21 @@ export const emptyTask = {
       status: 'pending',
       category: 'project',
 };
+
+export const searchContext = {
+      label: 'Search',
+      name: 'search',
+      type: 'text',
+};
+export const statusContext = {
+      label: 'Status',
+      name: 'status',
+      type: 'select',
+      options: ['all', 'active', 'pending', 'done'],
+};
+export const categoryContext = {
+      label: 'Category',
+      name: 'category',
+      type: 'select',
+      options: ['all', 'project', 'personal', 'fitness'],
+};

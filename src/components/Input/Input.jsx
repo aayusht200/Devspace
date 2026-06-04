@@ -1,6 +1,6 @@
 import { toCapitalize } from '../../helperFunctions/functions';
 
-const Input = ({ context, value, onChange, className }) => {
+const Input = ({ context, value = '', onChange, className = '' }) => {
       switch (context.type) {
             case 'text': {
                   return (
@@ -71,12 +71,11 @@ const DropDownList = ({ context, value, onChange, className }) => {
       return (
             <>
                   <label htmlFor={`${context.name}-select`}>
-                        {context.name}
+                        {context.label}
                   </label>
                   <select
                         name={context.name}
                         id={`${context.name}-select`}
-                        value={value}
                         onChange={onChange}
                         className={className}
                   >

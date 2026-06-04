@@ -20,9 +20,7 @@ const Pages = ({
                         {sideBarContent}
                   </div>
                   <div className="page-body flex-1 border-inherit">
-                        <h1 className="page-header h-fit border-b border-inherit font-extrabold">
-                              {header}
-                        </h1>
+                        {header}
                         {children}
                   </div>
             </div>
