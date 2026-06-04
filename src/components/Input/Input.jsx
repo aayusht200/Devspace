@@ -37,7 +37,7 @@ const Input = ({ context, value = '', onChange, className = '' }) => {
 
 const TextField = ({ context, value, onChange, className }) => {
       return (
-            <>
+            <div className="flex">
                   <label htmlFor={context.label}>{context.label} : </label>
                   <input
                         id={context.name}
@@ -46,15 +46,15 @@ const TextField = ({ context, value, onChange, className }) => {
                         value={value}
                         onChange={onChange}
                         type="text"
-                        className={className}
+                        className={`${className} rounded border`}
                         required={context.required}
                   />
-            </>
+            </div>
       );
 };
 const TextArea = ({ context, value, onChange, className }) => {
       return (
-            <>
+            <div className="flex">
                   <label htmlFor={context.name}>{context.label} : </label>
                   <textarea
                         id={context.name}
@@ -64,20 +64,20 @@ const TextArea = ({ context, value, onChange, className }) => {
                         type="text"
                         className={className}
                   />
-            </>
+            </div>
       );
 };
 const DropDownList = ({ context, value, onChange, className }) => {
       return (
-            <>
+            <div className="relative flex gap-2">
                   <label htmlFor={`${context.name}-select`}>
-                        {context.label}
+                        {context.label} :
                   </label>
                   <select
                         name={context.name}
                         id={`${context.name}-select`}
                         onChange={onChange}
-                        className={className}
+                        className={`${className} cursor-pointer rounded border text-center`}
                   >
                         {context.options.map((option) => (
                               <option key={option} value={option}>
@@ -85,7 +85,7 @@ const DropDownList = ({ context, value, onChange, className }) => {
                               </option>
                         ))}
                   </select>
-            </>
+            </div>
       );
 };
 export default Input;

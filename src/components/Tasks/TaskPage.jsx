@@ -59,7 +59,7 @@ const TaskPage = () => {
       }
       return (
             <Pages
-                  className="task-page border-tasks-border bg-tasks-bg text-tasks-text"
+                  className="task-page border-tasks-border bg-tasks-bg text-tasks-text accent-tasks-accent"
                   header={
                         <HeaderContent
                               onChange={(e, token) => {
@@ -71,13 +71,17 @@ const TaskPage = () => {
                   accent="text-tasks-text"
                   onClick={() => navigate('/')}
                   sideBarContent={
-                        <Button onClick={createNewTask}>Add New!</Button>
+                        <div className="sidebar">
+                              <Button onClick={createNewTask} className="">
+                                    Add New!
+                              </Button>
+                        </div>
                   }
             >
                   <TableComponent
                         data={filteredData}
                         columns={taskColumns}
-                        className={''}
+                        className={'border-tasks-border w-full border'}
                         renderActions={(task, id) => (
                               <div className="action">
                                     <Button
@@ -95,9 +99,11 @@ const TaskPage = () => {
 };
 function HeaderContent({ onChange, className = '', searchQuery }) {
       return (
-            <div className={`${className} page-header`}>
-                  <h1 className="">Tasks</h1>
-                  <div className="data-control">
+            <div
+                  className={`${className} page-header grid h-fit grid-cols-2 items-center gap-10 md:h-1/10`}
+            >
+                  <h1 className="font-bold">Tasks</h1>
+                  <div className="data-control flex gap-5">
                         <Input
                               context={searchContext}
                               onChange={(e) => {
