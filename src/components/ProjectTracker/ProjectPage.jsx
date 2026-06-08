@@ -24,10 +24,13 @@ const ProjectPage = () => {
                   const matchedQuery =
                         search === '' ||
                         project.title.toLowerCase().includes(search) ||
-                        project.description.toLowerCase().includes(search);
+                        project.description.toLowerCase().includes(search) ||
+                        project.startDate.toLowerCase().includes(search) ||
+                        project.endDate.toLowerCase().includes(search);
                   return matchesStatus && matchedQuery;
             }),
       );
+
       function handleFilter(e, token) {
             switch (token) {
                   case 'status': {

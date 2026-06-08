@@ -11,6 +11,7 @@ import Input from '../Input/Input';
 import { searchContext, statusContext, categoryContext } from './taskFields';
 const TaskPage = () => {
       const navigate = useNavigate();
+
       const { data, setData } = useContext(DataContext);
       const [searchQuery, setQuery] = useState('');
       const [filterStatus, setFilterStatus] = useState('all');

@@ -1,7 +1,6 @@
 import { useParams } from 'react-router-dom';
-
+import TableComponent from '../Table/TableComponent';
 const ProjectTaskPage = () => {
       const key = useParams();
-      console.log(key);
 };
 export default ProjectTaskPage;
