@@ -4,6 +4,10 @@ import { Routes, Route } from 'react-router-dom';
 import TaskPage from './components/Tasks/TaskPage';
 import DataProvider from './context/DataProvider';
 import EditTaskPage from './components/Tasks/EditTaskPage';
+import ProjectPage from './components/ProjectTracker/ProjectPage';
+import { Children } from 'react';
+import ProjectTaskPage from './components/ProjectTracker/ProjectTaskPage';
+import EditProjectPage from './components/ProjectTracker/EditProjectPage';
 function App() {
       localStorage.clear();
       return (
@@ -14,6 +18,15 @@ function App() {
                         <Route
                               path="/tasks/:id/edit"
                               element={<EditTaskPage />}
+                        />
+                        <Route path="/projects" element={<ProjectPage />} />
+                        <Route
+                              path="/project/:id/tasks"
+                              element={<ProjectTaskPage />}
+                        />
+                        <Route
+                              path="/project/:id/edit"
+                              element={<EditProjectPage />}
                         />
                   </Routes>
             </DataProvider>

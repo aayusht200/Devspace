@@ -21,7 +21,7 @@ const Pages = ({
                                     ⤌
                               </Button>
                         </div>
-                        <div className="sidebar">{sideBarContent}</div>
+                        {sideBarContent}
                   </div>
                   <div className="page-body flex w-full flex-col gap-2 md:gap-5">
                         {header}

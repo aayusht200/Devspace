@@ -4,7 +4,6 @@ export const taskColumns = [
       {
             header: 'Status',
             accessor: 'status',
-            render: (value) => <span>{value}</span>,
       },
       { header: 'Category', accessor: 'category' },
 ];

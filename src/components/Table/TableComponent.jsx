@@ -23,7 +23,7 @@ const TableComponent = ({ data, columns, renderActions, className }) => {
                   </thead>
 
                   <tbody className="overflow-auto border-inherit p-1">
-                        {Object.entries(data).map(([id, task]) => (
+                        {Object.entries(data).map(([id, dataPoint]) => (
                               <tr
                                     key={id}
                                     className="overflow-auto border border-inherit p-1 text-center"
@@ -35,17 +35,9 @@ const TableComponent = ({ data, columns, renderActions, className }) => {
                                                       className="border border-inherit p-1 text-center text-wrap"
                                                 >
                                                       {col.render
-                                                            ? col.render(
-                                                                    toCapitalize(
-                                                                          task[
-                                                                                col
-                                                                                      .accessor
-                                                                          ],
-                                                                          task,
-                                                                    ),
-                                                              )
+                                                            ? col.render(id)
                                                             : toCapitalize(
-                                                                    task[
+                                                                    dataPoint[
                                                                           col
                                                                                 .accessor
                                                                     ],
@@ -56,7 +48,7 @@ const TableComponent = ({ data, columns, renderActions, className }) => {
 
                                     {renderActions && (
                                           <td className="overflow-auto border border-inherit p-1 text-center">
-                                                {renderActions(task, id)}
+                                                {renderActions(dataPoint, id)}
                                           </td>
                                     )}
                               </tr>

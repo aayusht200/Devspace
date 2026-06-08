@@ -3,7 +3,7 @@ import { DataContext } from '../../context/DataContext';
 import Pages from '../Pages/Pages';
 import Button from '../Button/Button';
 import TableComponent from '../Table/TableComponent';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { taskColumns } from './taskColumns';
 import { randomId } from '../../helperFunctions/functions';
 import { emptyTask } from './taskFields';
@@ -59,7 +59,7 @@ const TaskPage = () => {
       }
       return (
             <Pages
-                  className="task-page border-tasks-border bg-tasks-bg text-tasks-text accent-tasks-accent text-xxs md:text-sm lg:text-base"
+                  className="task-page border-tasks-border bg-tasks-bg text-tasks-text text-xxs md:text-sm lg:text-base"
                   header={
                         <HeaderContent
                               onChange={(e, token) => {
@@ -107,7 +107,7 @@ function HeaderContent({ onChange, className = '', searchQuery }) {
       return (
             <div className={`${className} page-header flex flex-col gap-1`}>
                   <h1 className="font-bold">Tasks</h1>
-                  <div className="data-control grid gap-1 md:flex md:justify-evenly">
+                  <div className="data-control grid gap-1 md:flex md:justify-end">
                         <Input
                               context={searchContext}
                               onChange={(e) => {
