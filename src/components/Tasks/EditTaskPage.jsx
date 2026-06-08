@@ -52,16 +52,17 @@ const EditTaskPage = () => {
 
       return (
             <Pages
-                  className="task-page border-tasks-border bg-tasks-bg text-tasks-text"
+                  className="task-page border-tasks-border bg-tasks-bg text-tasks-text text-sm md:text-lg lg:text-xl"
                   header="Edit Task"
                   accent="text-tasks-text"
                   onClick={handleBack}
+                  hover="text-tasks-accent"
             >
                   {!task ? (
                         <p className="font-bold">Task Not Found!</p>
                   ) : (
                         <RenderTaskForm
-                              className="grid"
+                              className="grid auto-rows-auto gap-10"
                               data={task}
                               onChange={upDateData}
                               onSubmit={(e) => {
@@ -90,15 +91,24 @@ const RenderTaskForm = ({ data, onChange, className, onSubmit, onClick }) => {
                                     onChange={(e) => {
                                           onChange(id, e.target.value);
                                     }}
-                                    className={`bg-tasks-accent text-tasks-text border-tasks-border`}
+                                    className={`bg-tasks-accent text-tasks-text border-tasks-border h-fit w-fit`}
                               />
                         );
                   })}
-                  <div className="form-control">
-                        <Button className="" onClick={onClick}>
+                  <div className="form-control flex w-fit gap-5">
+                        <Button
+                              className=""
+                              onClick={onClick}
+                              hover="text-tasks-accent"
+                        >
                               Delete
                         </Button>
-                        <button type="submit">Save</button>
+                        <button
+                              type="submit "
+                              className="btn hover:text-tasks-accent"
+                        >
+                              Save
+                        </button>
                   </div>
             </form>
       );

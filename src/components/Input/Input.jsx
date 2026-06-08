@@ -37,7 +37,7 @@ const Input = ({ context, value = '', onChange, className = '' }) => {
 
 const TextField = ({ context, value, onChange, className }) => {
       return (
-            <div className="flex">
+            <div className={`flex`}>
                   <label htmlFor={context.label}>{context.label} : </label>
                   <input
                         id={context.name}
@@ -62,7 +62,7 @@ const TextArea = ({ context, value, onChange, className }) => {
                         value={value}
                         onChange={onChange}
                         type="text"
-                        className={className}
+                        className={`${className} md:w-md lg:w-lg`}
                   />
             </div>
       );

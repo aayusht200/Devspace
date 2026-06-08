@@ -1,14 +1,14 @@
 import './Button.css';
-const Button = ({ children, onClick, className = '', id = '' }) => {
-	return (
-		<button
-			className={`btn ${className} cursor-pointer hover:scale-120`}
-			id={id}
-			onClick={onClick}
-		>
-			{children}
-		</button>
-	);
+const Button = ({ children, onClick, className = '', id = '', hover = '' }) => {
+      return (
+            <button
+                  className={`btn ${className} hover:${hover}`}
+                  id={id}
+                  onClick={onClick}
+            >
+                  {children}
+            </button>
+      );
 };
 
 export default Button;

@@ -59,7 +59,7 @@ const TaskPage = () => {
       }
       return (
             <Pages
-                  className="task-page border-tasks-border bg-tasks-bg text-tasks-text accent-tasks-accent"
+                  className="task-page border-tasks-border bg-tasks-bg text-tasks-text accent-tasks-accent text-xxs md:text-sm lg:text-base"
                   header={
                         <HeaderContent
                               onChange={(e, token) => {
@@ -72,11 +72,16 @@ const TaskPage = () => {
                   onClick={() => navigate('/')}
                   sideBarContent={
                         <div className="sidebar">
-                              <Button onClick={createNewTask} className="">
+                              <Button
+                                    onClick={createNewTask}
+                                    className=""
+                                    hover="text-tasks-accent"
+                              >
                                     Add New!
                               </Button>
                         </div>
                   }
+                  hover="text-tasks-accent"
             >
                   <TableComponent
                         data={filteredData}
@@ -88,6 +93,7 @@ const TaskPage = () => {
                                           onClick={() => {
                                                 navigate(`/tasks/${id}/edit`);
                                           }}
+                                          hover="text-tasks-accent"
                                     >
                                           Edit
                                     </Button>
@@ -99,9 +105,9 @@ const TaskPage = () => {
 };
 function HeaderContent({ onChange, className = '', searchQuery }) {
       return (
-            <div className={`${className} page-header`}>
+            <div className={`${className} page-header flex flex-col gap-1`}>
                   <h1 className="font-bold">Tasks</h1>
-                  <div className="data-control ">
+                  <div className="data-control grid gap-1 md:flex md:justify-evenly">
                         <Input
                               context={searchContext}
                               onChange={(e) => {
