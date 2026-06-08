@@ -15,7 +15,7 @@ export const projectColumns = (navigate) => [
             render: (id) => {
                   return (
                         <Button
-                              onClick={() => navigate(`/projects/${id}/tasks`)}
+                              onClick={() => navigate(`/project/${id}/tasks`)}
                               hover="text-projects-accent"
                         >
                               Tasks

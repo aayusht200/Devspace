@@ -1,3 +1,5 @@
+import { formatDate } from '../../helperFunctions/functions';
+const date = formatDate(new Date());
 export const taskFields = {
       title: {
             label: 'Title',
@@ -29,7 +31,7 @@ export const emptyProject = {
       title: '',
       description: '',
       status: 'pending',
-      startDate: new Date().getDate(),
+      startDate: `${date.year}-${date.month}-${date.day}`,
       endDate: 'current',
       tasks: [],
 };

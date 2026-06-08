@@ -51,6 +51,7 @@ const ProjectPage = () => {
             }));
             navigate(`/project/${newId}/edit`);
       }
+
       return (
             <Pages
                   className="projects-page text-xxs bg-projects-bg text-projects-text md:text-sm lg:text-base"
