@@ -24,3 +24,22 @@ export const projectColumns = (navigate) => [
             },
       },
 ];
+
+export const taskColumns = [
+      {
+            header: 'Title',
+            accessor: 'title',
+      },
+      {
+            header: 'Task Description',
+            accessor: 'taskDescription',
+      },
+      {
+            header: 'Task Status',
+            accessor: 'taskStatus',
+      },
+      {
+            header: 'Start Date',
+            accessor: 'startDate',
+      },
+];

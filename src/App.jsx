@@ -8,8 +8,11 @@ import ProjectPage from './components/ProjectTracker/ProjectPage';
 import { Children } from 'react';
 import ProjectTaskPage from './components/ProjectTracker/ProjectTaskPage';
 import EditProjectPage from './components/ProjectTracker/EditProjectPage';
+import EditProjectTask from './components/ProjectTracker/EditProjectTask';
+import { randomId } from './helperFunctions/functions';
 function App() {
       localStorage.clear();
+
       return (
             <DataProvider>
                   <Routes>
@@ -27,6 +30,10 @@ function App() {
                         <Route
                               path="/project/:id/edit"
                               element={<EditProjectPage />}
+                        />
+                        <Route
+                              path="/projects/:projectId/tasks/:taskId/edit"
+                              element={<EditProjectTask />}
                         />
                   </Routes>
             </DataProvider>

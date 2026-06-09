@@ -3,7 +3,7 @@ import { DataContext } from '../../context/DataContext';
 import Pages from '../Pages/Pages';
 import Button from '../Button/Button';
 import TableComponent from '../Table/TableComponent';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { taskColumns } from './taskColumns';
 import { randomId } from '../../helperFunctions/functions';
 import { emptyTask } from './taskFields';

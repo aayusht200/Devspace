@@ -2,14 +2,17 @@ import { useContext, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { DataContext } from '../../context/DataContext';
 import Pages from '../Pages/Pages';
-import { taskFields } from './taskFields';
+import { taskFields } from './projectFields';
 import Button from '../Button/Button';
 import Input from '../Input/Input';
-const EditTaskPage = () => {
-      const { id } = useParams();
+
+const EditProjectTask = () => {
+      const params = useParams();
       const { data, setData } = useContext(DataContext);
       const navigate = useNavigate();
-      const [task, setTask] = useState(data.tasks[id]);
+      const [task, setTask] = useState(
+            data.project[params.projectId].tasks[params.taskId],
+      );
       function upDateData(context, value) {
             setTask((prev) => ({
                   ...prev,
@@ -19,28 +22,41 @@ const EditTaskPage = () => {
       function submitData() {
             setData((prev) => ({
                   ...prev,
-                  tasks: {
-                        ...prev.tasks,
-                        [id]: {
-                              ...task,
+                  project: {
+                        ...prev.project,
+                        [params.projectId]: {
+                              ...prev.project[params.projectId],
+                              tasks: {
+                                    ...prev.project[params.projectId].tasks,
+                                    [params.taskId]: { ...task },
+                              },
                         },
                   },
             }));
-            navigate('/tasks');
+            navigate(`/project/${params.projectId}/tasks`);
       }
       function handleDelete() {
-            const newTasks = Object.entries(data.tasks).filter(
-                  ([currid, data]) => {
-                        return currid !== id;
-                  },
+            const newTasks = Object.fromEntries(
+                  Object.entries(data.project[params.projectId].tasks).filter(
+                        ([currid, data]) => {
+                              return currid !== params.taskId;
+                        },
+                  ),
             );
+
             setData((prev) => ({
                   ...prev,
-                  tasks: {
-                        ...Object.fromEntries(newTasks),
+                  project: {
+                        ...prev.project,
+                        [params.projectId]: {
+                              ...prev.project[params.projectId],
+                              tasks: {
+                                    ...newTasks,
+                              },
+                        },
                   },
             }));
-            navigate('/tasks');
+            navigate(`/project/${params.projectId}/tasks`);
       }
       function handleBack() {
             if (task.title.trim().length > 0) {
@@ -49,7 +65,6 @@ const EditTaskPage = () => {
                   handleDelete();
             }
       }
-
       return (
             <Pages
                   className="task-page border-tasks-border bg-tasks-bg text-tasks-text text-sm md:text-lg lg:text-xl"
@@ -78,12 +93,10 @@ const EditTaskPage = () => {
             </Pages>
       );
 };
-
 const RenderTaskForm = ({ data, onChange, className, onSubmit, onClick }) => {
       return (
             <form className={`${className}`} onSubmit={onSubmit}>
                   {Object.entries(data).map(([id, value]) => {
-                        
                         return (
                               <Input
                                     key={id}
@@ -114,4 +127,5 @@ const RenderTaskForm = ({ data, onChange, className, onSubmit, onClick }) => {
             </form>
       );
 };
-export default EditTaskPage;
+
+export default EditProjectTask;

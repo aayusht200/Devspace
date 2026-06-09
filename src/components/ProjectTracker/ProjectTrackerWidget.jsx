@@ -28,9 +28,10 @@ const ProjectTracker = ({ className }) => {
 };
 
 function ProjectInfo({ project }) {
-      const openTasks = project.tasks.filter((task) => {
+      const openTasks = Object.entries(project.tasks).filter(([id, task]) => {
             return task.taskStatus === 'open';
       });
+
       return (
             <div className="project-info border-reading-border grid rounded-2xl border-2 p-2 shadow">
                   <div className="project-header flex items-center justify-center">
@@ -40,13 +41,18 @@ function ProjectInfo({ project }) {
                         </div>
                   </div>
                   <span className="m-0 inline-block h-fit p-0">
-                        Completed : {project.tasks.length - openTasks.length} /{' '}
-                        {project.tasks.length}
+                        Completed :{' '}
+                        {Object.entries(project.tasks).length -
+                              openTasks.length}{' '}
+                        / {Object.entries(project.tasks).length}
                   </span>
                   <StatusBar
                         className="h-4 rounded-lg font-light text-black"
-                        current={project.tasks.length - openTasks.length}
-                        total={project.tasks.length}
+                        current={
+                              Object.entries(project.tasks).length -
+                              openTasks.length
+                        }
+                        total={Object.entries(project.tasks).length}
                   />
                   <OpenTasks taskData={openTasks} />
             </div>
@@ -60,11 +66,9 @@ function OpenTasks({ taskData }) {
                   <p className="task-header underline underline-offset-3">
                         Active Tasks
                   </p>
-                  {Object.entries(taskData)
-                        .slice(0, 3)
-                        .map(([id, task]) => {
-                              return <TaskInfo task={task} key={task.id} />;
-                        })}
+                  {Object.entries(taskData).map(([id, data]) => {
+                        return <TaskInfo key={data[0]} task={data[1]} />;
+                  })}
             </div>
       );
 }

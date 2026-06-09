@@ -32,6 +32,16 @@ const Input = ({ context, value = '', onChange, className = '' }) => {
                         />
                   );
             }
+            case 'date': {
+                  return (
+                        <Date
+                              context={context}
+                              value={value}
+                              onChange={onChange}
+                              className={className}
+                        />
+                  );
+            }
       }
 };
 
@@ -85,6 +95,20 @@ const DropDownList = ({ context, value, onChange, className }) => {
                               </option>
                         ))}
                   </select>
+            </div>
+      );
+};
+const Date = ({ context, value, onChange, className }) => {
+      return (
+            <div>
+                  <label htmlFor={context.name}>{context.label} :</label>
+                  <input
+                        id={context.name}
+                        type="date"
+                        value={value}
+                        onChange={onChange}
+                        className={`${className}`}
+                  />
             </div>
       );
 };

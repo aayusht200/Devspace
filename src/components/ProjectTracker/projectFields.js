@@ -7,23 +7,22 @@ export const taskFields = {
             type: 'text',
             required: true,
       },
-      description: {
-            label: 'Description',
-            name: 'description',
+      taskDescription: {
+            label: 'Task Description',
+            name: 'taskDescription',
             type: 'textarea',
             required: true,
       },
-      status: {
-            label: 'Status',
-            name: 'status',
+      taskStatus: {
+            label: 'Task Status',
+            name: 'taskStatus',
             type: 'select',
-            options: ['active', 'pending', 'done'],
+            options: ['open', 'pending', 'completed'],
       },
-      category: {
-            label: 'Category',
-            name: 'category',
-            type: 'select',
-            options: ['project', 'personal', 'fitness'],
+      startDate: {
+            label: 'Start Date',
+            name: 'startDate',
+            type: 'date',
       },
 };
 
@@ -35,7 +34,12 @@ export const emptyProject = {
       endDate: 'current',
       tasks: [],
 };
-
+export const emptyTask = {
+      title: ``,
+      taskDescription: ``,
+      taskStatus: `open`,
+      startDate: `${date.year}-${date.month}-${date.day}`,
+};
 export const searchContext = {
       label: 'Search',
       name: 'search',
@@ -45,5 +49,5 @@ export const statusContext = {
       label: 'Status',
       name: 'status',
       type: 'select',
-      options: ['all', 'active', 'pending', 'done'],
+      options: ['all', 'open', 'pending', 'completed'],
 };

@@ -14,6 +14,7 @@ const ProjectPage = () => {
       const columns = projectColumns(navigate);
       const [searchQuery, setQuery] = useState('');
       const [filterStatus, setFilterStatus] = useState('all');
+      console.log(data);
       const filteredData = Object.fromEntries(
             Object.entries(data.project).filter(([id, project]) => {
                   const search = searchQuery.toLowerCase();
