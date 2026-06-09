@@ -67,11 +67,11 @@ const EditProjectTask = () => {
       }
       return (
             <Pages
-                  className="task-page border-tasks-border bg-tasks-bg text-tasks-text text-sm md:text-lg lg:text-xl"
+                  className="task-page bg-projects-bg border-projects-border text-projects-text text-sm md:text-lg lg:text-xl"
                   header="Edit Task"
-                  accent="text-tasks-text"
+                  accent="text-projects-text"
                   onClick={handleBack}
-                  hover="text-tasks-accent"
+                  hover="text-projects-accent"
             >
                   {!task ? (
                         <p className="font-bold">Task Not Found!</p>
@@ -105,7 +105,7 @@ const RenderTaskForm = ({ data, onChange, className, onSubmit, onClick }) => {
                                     onChange={(e) => {
                                           onChange(id, e.target.value);
                                     }}
-                                    className={`bg-tasks-accent text-tasks-text border-tasks-border h-fit w-fit`}
+                                    className={`bg-projects-accent text-projects-text border-projects-border h-fit w-fit`}
                               />
                         );
                   })}
@@ -113,13 +113,13 @@ const RenderTaskForm = ({ data, onChange, className, onSubmit, onClick }) => {
                         <Button
                               className=""
                               onClick={onClick}
-                              hover="text-tasks-accent"
+                              hover="text-projects-accent"
                         >
                               Delete
                         </Button>
                         <button
-                              type="submit "
-                              className="btn hover:text-tasks-accent"
+                              type="submit btn"
+                              className="btn hover:text-projects-accent"
                         >
                               Save
                         </button>

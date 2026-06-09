@@ -15,7 +15,6 @@ function toCapitalize(str) {
 function formatDate(time) {
       return {
             date: padNum(time.getDate()),
-            day: padNum(time.getDay()),
             year: time.getFullYear(),
             month: padNum(time.getMonth()),
             dayStr: dayNames[time.getDay()],

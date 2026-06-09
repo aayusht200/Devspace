@@ -30,7 +30,7 @@ export const emptyProject = {
       title: '',
       description: '',
       status: 'pending',
-      startDate: `${date.year}-${date.month}-${date.day}`,
+      startDate: `${date.year}-${date.month}-${date.date}`,
       endDate: 'current',
       tasks: [],
 };
@@ -38,7 +38,7 @@ export const emptyTask = {
       title: ``,
       taskDescription: ``,
       taskStatus: `open`,
-      startDate: `${date.year}-${date.month}-${date.day}`,
+      startDate: `${date.year}-${date.month}-${date.date}`,
 };
 export const searchContext = {
       label: 'Search',

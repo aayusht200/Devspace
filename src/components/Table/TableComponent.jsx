@@ -36,9 +36,12 @@ const TableComponent = ({ data, columns, renderActions, className }) => {
                                                 >
                                                       {col.render
                                                             ? col.render(id)
-                                                            : dataPoint[
-                                                                    col.accessor
-                                                              ]}
+                                                            : toCapitalize(
+                                                                    dataPoint[
+                                                                          col
+                                                                                .accessor
+                                                                    ],
+                                                              )}
                                                 </td>
                                           );
                                     })}

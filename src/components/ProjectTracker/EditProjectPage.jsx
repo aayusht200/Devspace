@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 
-const EditProjectPage = () => {
+const EditProject = () => {
       const key = useParams();
       console.log(key);
 };
-export default EditProjectPage;
+export default EditProject;
