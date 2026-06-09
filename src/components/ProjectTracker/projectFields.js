@@ -25,7 +25,41 @@ export const taskFields = {
             type: 'date',
       },
 };
-
+export const projectFields = {
+      title: {
+            label: 'Title',
+            name: 'title',
+            type: 'text',
+            required: true,
+      },
+      description: {
+            label: 'Description',
+            name: 'description',
+            type: 'textarea',
+            required: true,
+      },
+      startDate: {
+            label: 'Start Date',
+            name: 'startDate',
+            type: 'date',
+      },
+      endDate: {
+            label: 'End Date',
+            name: 'endDate',
+            type: 'date',
+      },
+      status: {
+            label: 'Status',
+            name: 'status',
+            type: 'select',
+            options: ['open', 'pending', 'completed'],
+      },
+      tasks: {
+            label: 'Tasks',
+            name: 'tasks',
+            type: 'array',
+      },
+};
 export const emptyProject = {
       title: '',
       description: '',

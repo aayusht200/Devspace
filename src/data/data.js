@@ -53,7 +53,7 @@ const data = {
                   title: 'DevSpace',
                   startDate: '2026-05-26',
                   endDate: 'current',
-                  status: 'active',
+                  status: 'open',
                   description:
                         'DevSpace is a large-scale React application focused on productivity and developer workflow management.',
                   tasks: {
@@ -90,7 +90,7 @@ const data = {
                   title: 'Memory Game',
                   startDate: '2026-05-28',
                   endDate: '2026-05-28',
-                  status: 'active',
+                  status: 'open',
                   description:
                         'A fun and interactive memory card game built with React and Vite. Test your memory skills by matching pairs of cards!',
                   tasks: {
