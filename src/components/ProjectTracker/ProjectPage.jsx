@@ -14,7 +14,7 @@ const ProjectPage = () => {
       const columns = projectColumns(navigate);
       const [searchQuery, setQuery] = useState('');
       const [filterStatus, setFilterStatus] = useState('all');
-     
+
       const filteredData = Object.fromEntries(
             Object.entries(data.project).filter(([id, project]) => {
                   const search = searchQuery.toLowerCase();
@@ -58,7 +58,7 @@ const ProjectPage = () => {
 
       return (
             <Pages
-                  className="projects-page text-xxs bg-projects-bg text-projects-text md:text-sm lg:text-base"
+                  className="projects-page text-xxs bg-projects-bg text-projects-text w-screen md:text-sm lg:text-base"
                   accent="text-projects-text"
                   onClick={() => navigate('/')}
                   sideBarContent={
@@ -86,6 +86,7 @@ const ProjectPage = () => {
                         <TableComponent
                               data={filteredData}
                               columns={columns}
+                              className={'border-projects-border border'}
                               renderActions={(project, id) => (
                                     <div className="action">
                                           <Button
@@ -109,7 +110,7 @@ function HeaderContent({ onChange, className = '', searchQuery }) {
       return (
             <div className={`${className} page-header flex flex-col gap-1`}>
                   <h1 className="font-bold">Projects</h1>
-                  <div className="data-control grid gap-1 md:flex md:justify-end">
+                  <div className="data-control grid gap-1 md:flex">
                         <Input
                               context={searchContext}
                               onChange={(e) => {

@@ -8,14 +8,14 @@ const TableComponent = ({ data, columns, renderActions, className }) => {
                               {columns.map((col) => (
                                     <th
                                           key={col.accessor}
-                                          className="overflow-auto border border-inherit p-1"
+                                          className="overflow-auto border border-inherit md:p-1"
                                     >
                                           {col.header}
                                     </th>
                               ))}
 
                               {renderActions && (
-                                    <th className="overflow-auto border border-inherit p-1">
+                                    <th className="border border-inherit md:p-1">
                                           Actions
                                     </th>
                               )}

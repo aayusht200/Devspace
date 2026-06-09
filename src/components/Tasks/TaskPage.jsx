@@ -108,7 +108,7 @@ function HeaderContent({ onChange, className = '', searchQuery }) {
       return (
             <div className={`${className} page-header flex flex-col gap-1`}>
                   <h1 className="font-bold">Tasks</h1>
-                  <div className="data-control grid gap-1 md:flex md:justify-end">
+                  <div className="data-control grid  gap-1 md:flex ">
                         <Input
                               context={searchContext}
                               onChange={(e) => {
