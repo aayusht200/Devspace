@@ -53,25 +53,25 @@ const PomodoroWidget = ({ className }) => {
       }, [timer.isRunning, setData]);
       return (
             <CardWidget
-                  className={`pomodoro-timer ${className} bg-pomodoro-bg text-pomodoro-text border-pomodoro-border lg:text-md/snug items-center  text-xs md:text-sm/snug`}
+                  className={`pomodoro-timer ${className} bg-pomodoro-bg text-pomodoro-text border-pomodoro-border lg:text-md/snug items-center text-xs md:text-sm/snug`}
                   header="Pomodoro Timer"
-                  accent="text-pomodoro-accent"
+                  accent="hover:text-pomodoro-accent"
             >
                   <div className="header-pomodoro grid grid-cols-3 items-center">
                         <Button
-                              className="pomodoro border-pomodoro-border text-pomodoro-accent hover:text-pomodoro-text hover:bg-pomodoro-accent h-fit w-fit justify-self-center rounded-xl border-2 pr-2 pl-2 duration-150 ease-in-out hover:scale-105"
+                              className="pomodoro border-pomodoro-border text-pomodoro-accent hover:text-pomodoro-text hover:bg-pomodoro-accent justify-self-center"
                               onClick={() => handleModeChange('pomodoro')}
                         >
                               Pomodoro
                         </Button>
                         <Button
-                              className="pomodoro border-pomodoro-border text-pomodoro-accent hover:text-pomodoro-text hover:bg-pomodoro-accent h-fit w-fit justify-self-center rounded-xl border-2 pr-2 pl-2 duration-150 ease-in-out hover:scale-105"
+                              className="pomodoro border-pomodoro-border text-pomodoro-accent hover:text-pomodoro-text hover:bg-pomodoro-accent justify-self-center"
                               onClick={() => handleModeChange('short')}
                         >
                               Short
                         </Button>
                         <Button
-                              className="pomodoro border-pomodoro-border text-pomodoro-accent hover:text-pomodoro-text hover:bg-pomodoro-accent h-fit w-fit justify-self-center rounded-xl border-2 pr-2 pl-2 duration-150 ease-in-out hover:scale-105"
+                              className="pomodoro border-pomodoro-border text-pomodoro-accent hover:text-pomodoro-text hover:bg-pomodoro-accent justify-self-center"
                               onClick={() => handleModeChange('long')}
                         >
                               Long

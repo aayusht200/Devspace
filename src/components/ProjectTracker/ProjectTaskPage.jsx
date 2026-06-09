@@ -81,8 +81,7 @@ const ProjectTaskPage = () => {
                         <div className="sidebar">
                               <Button
                                     onClick={createNewTask}
-                                    className=""
-                                    hover="text-projects-accent"
+                                    className="bg-projects-bg text-projects-accent hover:text-projects-text hover:bg-projects-accent border-projects-border"
                               >
                                     Add New!
                               </Button>
@@ -93,7 +92,7 @@ const ProjectTaskPage = () => {
                   <TableComponent
                         data={filteredData}
                         columns={taskColumns}
-                        className={''}
+                        className={'border-projects-border'}
                         renderActions={(task, id) => {
                               return (
                                     <div className="action">
@@ -103,7 +102,7 @@ const ProjectTaskPage = () => {
                                                             `/projects/${key.id}/tasks/${id}/edit`,
                                                       );
                                                 }}
-                                                hover="text-projects-accent"
+                                                className="bg-projects-bg text-projects-accent hover:text-projects-text hover:bg-projects-accent border-projects-border"
                                           >
                                                 Edit
                                           </Button>
@@ -125,12 +124,14 @@ function HeaderContent({ onChange, className = '', searchQuery }) {
                                     onChange(e, 'search');
                               }}
                               value={searchQuery}
+                              className="bg-projects-bg text-projects-accent hover:text-projects-text hover:bg-projects-accent border-projects-border"
                         />
                         <Input
                               context={statusContext}
                               onChange={(e) => {
                                     onChange(e, 'status');
                               }}
+                              className="bg-projects-bg text-projects-accent hover:text-projects-text hover:bg-projects-accent border-projects-border"
                         />
                   </div>
             </div>

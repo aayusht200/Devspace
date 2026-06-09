@@ -75,7 +75,7 @@ const TaskPage = () => {
                         <div className="sidebar">
                               <Button
                                     onClick={createNewTask}
-                                    className=""
+                                    className="bg-tasks-bg text-tasks-accent hover:text-tasks-text hover:bg-tasks-accent border-tasks-border"
                                     hover="text-tasks-accent"
                               >
                                     Add New!
@@ -94,7 +94,7 @@ const TaskPage = () => {
                                           onClick={() => {
                                                 navigate(`/tasks/${id}/edit`);
                                           }}
-                                          hover="text-tasks-accent"
+                                          className="bg-tasks-bg text-tasks-accent hover:text-tasks-text hover:bg-tasks-accent border-tasks-border"
                                     >
                                           Edit
                                     </Button>
@@ -108,25 +108,28 @@ function HeaderContent({ onChange, className = '', searchQuery }) {
       return (
             <div className={`${className} page-header flex flex-col gap-1`}>
                   <h1 className="font-bold">Tasks</h1>
-                  <div className="data-control grid  gap-1 md:flex ">
+                  <div className="data-control grid gap-1 md:flex">
                         <Input
                               context={searchContext}
                               onChange={(e) => {
                                     onChange(e, 'search');
                               }}
                               value={searchQuery}
+                              className="bg-tasks-bg text-tasks-accent hover:text-tasks-text hover:bg-tasks-accent border-tasks-border"
                         />
                         <Input
                               context={statusContext}
                               onChange={(e) => {
                                     onChange(e, 'status');
                               }}
+                              className="bg-tasks-bg text-tasks-accent hover:text-tasks-text hover:bg-tasks-accent border-tasks-border"
                         />
                         <Input
                               context={categoryContext}
                               onChange={(e) => {
                                     onChange(e, 'category');
                               }}
+                              className="bg-tasks-bg text-tasks-accent hover:text-tasks-text hover:bg-tasks-accent border-tasks-border"
                         />
                   </div>
             </div>

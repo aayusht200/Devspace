@@ -24,7 +24,7 @@ const TasksWidget = ({ className }) => {
             <CardWidget
                   className={`task-list ${className} bg-tasks-bg border-tasks-border text-tasks-text flex items-start text-xs md:text-xs/snug lg:text-sm/snug`}
                   header="Tasks"
-                  accent="text-tasks-accent"
+                  accent="hover:text-tasks-accent"
                   onOpen={() => navigate('/tasks')}
             >
                   <p className="task-header font-semibold">Active Tasks</p>

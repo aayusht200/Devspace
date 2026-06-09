@@ -9,9 +9,9 @@ const GithubWidget = ({ className }) => {
       const [data] = useLocalStorage('github', gitData);
       return (
             <CardWidget
-                  className={`github-data ${className} bg-github-bg text-github-text border-github-border grid gap-0.5  text-xs md:text-sm/snug lg:text-sm`}
+                  className={`github-data ${className} bg-github-bg text-github-text border-github-border grid gap-0.5 text-xs md:text-sm/snug lg:text-sm`}
                   header="Github"
-                  accent="text-github-accent"
+                  accent="hover:text-github-accent"
             >
                   <div className="profile-info grid h-fit grid-cols-3 items-center pr-2 pl-2">
                         <div className="profile-picture-container">
@@ -60,7 +60,7 @@ const GithubWidget = ({ className }) => {
 
 function RenderMap({ weeks }) {
       return (
-            <div className="heat-map bg-github-map-bg flex justify-evenly rounded-xs p-1 mb-1.25 md:mb-1">
+            <div className="heat-map bg-github-map-bg mb-1.25 flex justify-evenly rounded-xs p-1 md:mb-1">
                   {weeks.map((week, index) => (
                         <RenderWeek
                               key={`week-${index}`}

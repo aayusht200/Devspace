@@ -111,18 +111,17 @@ const RenderTaskForm = ({ data, onChange, className, onSubmit, onClick }) => {
                   })}
                   <div className="form-control flex w-fit gap-5">
                         <Button
-                              className=""
+                              className="bg-projects-bg text-projects-accent hover:text-projects-text hover:bg-projects-accent border-projects-border"
                               onClick={onClick}
-                              hover="text-projects-accent"
                         >
                               Delete
                         </Button>
-                        <button
-                              type="submit btn"
-                              className="btn hover:text-projects-accent"
+                        <Button
+                              type="submit"
+                              className="bg-projects-bg text-projects-accent hover:text-projects-text hover:bg-projects-accent border-projects-border"
                         >
                               Save
-                        </button>
+                        </Button>
                   </div>
             </form>
       );

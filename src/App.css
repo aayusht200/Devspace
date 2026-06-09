@@ -1,61 +1,60 @@
 @import 'tailwindcss';
 
 @theme {
-	/* Typography */
-	--text-xxs: 0.5rem;
-	--text-label-xxxs: 0.25rem;
-	/* Base Dashboard */
-	--color-dashboard-bg: hsl(220, 15%, 10%);
-	--color-dashboard-border: hsl(220, 15%, 20%);
-	--color-dashboard-text: hsl(220, 20%, 95%);
-	--color-dashboard-accent: hsl(220, 80%, 60%);
+      /* Typography */
+      --text-xxs: 0.5rem;
+      --text-label-xxxs: 0.25rem;
+      /* Base Dashboard */
+      --color-dashboard-bg: hsl(222, 20%, 8%);
+      --color-dashboard-border: hsl(222, 18%, 18%);
+      --color-dashboard-text: hsl(220, 20%, 96%);
+      --color-dashboard-accent: hsl(220, 90%, 65%);
 
-	/* Clock */
-	--color-clock-bg: hsl(210, 70%, 20%);
-	--color-clock-border: hsl(210, 70%, 30%);
-	--color-clock-text: hsl(210, 20%, 95%);
-	--color-clock-accent: hsl(210, 90%, 60%);
+      /* Clock */
+      --color-clock-bg: hsl(208, 65%, 16%);
+      --color-clock-border: hsl(208, 65%, 28%);
+      --color-clock-text: hsl(210, 25%, 96%);
+      --color-clock-accent: hsl(200, 100%, 65%);
 
-	/* Pomodoro */
-	--color-pomodoro-bg: hsl(0, 65%, 20%);
-	--color-pomodoro-border: hsl(0, 65%, 30%);
-	--color-pomodoro-text: hsl(0, 20%, 95%);
-	--color-pomodoro-accent: hsl(0, 90%, 60%);
+      /* Pomodoro */
+      --color-pomodoro-bg: hsl(4, 65%, 16%);
+      --color-pomodoro-border: hsl(4, 65%, 28%);
+      --color-pomodoro-text: hsl(0, 20%, 96%);
+      --color-pomodoro-accent: hsl(8, 95%, 65%);
+      /* Reading */
+      --color-reading-bg: hsl(38, 45%, 16%);
+      --color-reading-border: hsl(38, 45%, 28%);
+      --color-reading-text: hsl(40, 25%, 96%);
+      --color-reading-accent: hsl(42, 100%, 65%);
 
-	/* Reading */
-	--color-reading-bg: hsl(35, 45%, 20%);
-	--color-reading-border: hsl(35, 45%, 30%);
-	--color-reading-text: hsl(35, 20%, 95%);
-	--color-reading-accent: hsl(35, 90%, 60%);
+      /* Tasks */
+      --color-tasks-bg: hsl(265, 35%, 16%);
+      --color-tasks-border: hsl(265, 35%, 28%);
+      --color-tasks-text: hsl(260, 25%, 96%);
+      --color-tasks-accent: hsl(270, 100%, 75%);
 
-	/* Tasks */
-	--color-tasks-bg: hsl(260, 35%, 20%);
-	--color-tasks-border: hsl(260, 35%, 30%);
-	--color-tasks-text: hsl(260, 20%, 95%);
-	--color-tasks-accent: hsl(260, 90%, 70%);
+      /* GitHub */
+      --color-github-bg: hsl(220, 18%, 14%);
+      --color-github-border: hsl(220, 18%, 26%);
+      --color-github-text: hsl(220, 20%, 96%);
+      --color-github-accent: hsl(220, 90%, 68%);
+      --color-github-map-bg: hsl(216, 28%, 7%);
+      --color-default-bgColor-0: #151b23;
+      --color-default-bgColor-1: #033a16;
+      --color-default-bgColor-2: #196c2e;
+      --color-default-bgColor-3: #2ea043;
+      --color-default-bgColor-4: #56d364;
+      --color-bgColor-hover: #262c36;
 
-	/* GitHub */
-	--color-github-bg: hsl(220, 15%, 18%);
-	--color-github-border: hsl(220, 15%, 30%);
-	--color-github-text: hsl(220, 20%, 95%);
-	--color-github-accent: hsl(220, 80%, 60%);
-	--color-github-map-bg: hsl(216, 28%, 7%);
-	--color-default-bgColor-0: #151b23;
-	--color-default-bgColor-1: #033a16;
-	--color-default-bgColor-2: #196c2e;
-	--color-default-bgColor-3: #2ea043;
-	--color-default-bgColor-4: #56d364;
-	--color-bgColor-hover: #262c36;
+      /* Spotify */
+      --color-spotify-bg: hsl(145, 65%, 14%);
+      --color-spotify-border: hsl(145, 65%, 26%);
+      --color-spotify-text: hsl(145, 25%, 96%);
+      --color-spotify-accent: hsl(142, 100%, 55%);
 
-	/* Spotify */
-	--color-spotify-bg: hsl(142, 70%, 15%);
-	--color-spotify-border: hsl(142, 70%, 28%);
-	--color-spotify-text: hsl(142, 20%, 95%);
-	--color-spotify-accent: hsl(142, 90%, 50%);
-
-	/* Projects */
-	--color-projects-bg: hsl(30, 60%, 20%);
-	--color-projects-border: hsl(30, 60%, 30%);
-	--color-projects-text: hsl(30, 20%, 95%);
-	--color-projects-accent: hsl(30, 90%, 60%);
+      /* Projects */
+      --color-projects-bg: hsl(28, 60%, 16%);
+      --color-projects-border: hsl(28, 60%, 28%);
+      --color-projects-text: hsl(30, 25%, 96%);
+      --color-projects-accent: hsl(32, 100%, 65%);
 }

@@ -10,7 +10,7 @@ const ReadingListWidget = ({ className }) => {
             <CardWidget
                   className={`reading-list ${className} text-reading-text bg-reading-bg border-reading-border md:text-md/snug lg:text-md text-sm`}
                   header="Reading List"
-                  accent="text-reading-accent"
+                  accent="hover:text-reading-accent"
             >
                   {Object.entries(data.book)
                         .slice(0, 3)

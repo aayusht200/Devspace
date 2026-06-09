@@ -83,7 +83,6 @@ const RenderTaskForm = ({ data, onChange, className, onSubmit, onClick }) => {
       return (
             <form className={`${className}`} onSubmit={onSubmit}>
                   {Object.entries(data).map(([id, value]) => {
-                        
                         return (
                               <Input
                                     key={id}
@@ -98,18 +97,17 @@ const RenderTaskForm = ({ data, onChange, className, onSubmit, onClick }) => {
                   })}
                   <div className="form-control flex w-fit gap-5">
                         <Button
-                              className=""
+                              className="bg-tasks-bg text-tasks-accent hover:text-tasks-text hover:bg-tasks-accent border-tasks-border"
                               onClick={onClick}
-                              hover="text-tasks-accent"
                         >
                               Delete
                         </Button>
-                        <button
-                              type="submit "
-                              className="btn hover:text-tasks-accent"
+                        <Button
+                              type="submit"
+                              className="bg-tasks-bg text-tasks-accent hover:text-tasks-text hover:bg-tasks-accent border-tasks-border"
                         >
                               Save
-                        </button>
+                        </Button>
                   </div>
             </form>
       );

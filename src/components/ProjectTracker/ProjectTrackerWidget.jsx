@@ -12,7 +12,7 @@ const ProjectTracker = ({ className }) => {
       return (
             <CardWidget
                   className={`project-tracker ${className} bg-projects-bg border-projects-border text-projects-text lg:text-md/snug flex items-start text-xs md:text-sm`}
-                  accent="text-projects-accent"
+                  accent="hover:text-projects-accent"
                   header="Projects"
                   onOpen={() => {
                         navigate('/projects');

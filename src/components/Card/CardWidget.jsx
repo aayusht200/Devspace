@@ -5,7 +5,7 @@ const CardWidget = ({
       className = '',
       header = '',
       onOpen = null,
-      accent = 'white',
+      accent = '',
 }) => {
       if (children == null) return null;
       return (
@@ -19,12 +19,12 @@ const CardWidget = ({
                         {children}
                   </div>
                   <div className="card-footer mr-4 flex h-fit items-center justify-end place-self-end">
-                        <Button
-                              className={`card-button text-lg/snug md:text-xl/snug lg:text-2xl/8 ${accent}`}
+                        <button
+                              className={`card-button text-xl md:text-3xl lg:text-4xl ${accent} cursor-pointer duration-150 ease-in-out hover:scale-125`}
                               onClick={onOpen}
                         >
                               ⤍
-                        </Button>
+                        </button>
                   </div>
             </div>
       );
