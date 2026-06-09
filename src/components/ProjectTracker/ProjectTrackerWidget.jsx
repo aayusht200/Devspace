@@ -11,7 +11,7 @@ const ProjectTracker = ({ className }) => {
 
       return (
             <CardWidget
-                  className={`project-tracker ${className} text-xxs/snug bg-projects-bg border-projects-border text-projects-text flex items-start text-center md:text-xs/snug lg:text-sm/snug`}
+                  className={`project-tracker ${className} bg-projects-bg border-projects-border text-projects-text lg:text-md/snug flex items-start text-xs md:text-sm`}
                   accent="text-projects-accent"
                   header="Projects"
                   onOpen={() => {
@@ -33,21 +33,22 @@ function ProjectInfo({ project }) {
       });
 
       return (
-            <div className="project-info border-reading-border grid rounded-2xl border-2 p-2 shadow">
-                  <div className="project-header flex items-center justify-center">
+            <div className="project-info border-reading-border grid gap-1 rounded-2xl border-2 p-2">
+                  <div className="project-header flex font-bold">
                         <div className="project-title">{project.title}</div>
                         <div className="project-status flex-1 text-right">
                               {toCapitalize(project.status)}
                         </div>
                   </div>
-                  <span className="m-0 inline-block h-fit p-0">
+                  <span className="m-0 inline-block p-0">
                         Completed :{' '}
                         {Object.entries(project.tasks).length -
                               openTasks.length}{' '}
                         / {Object.entries(project.tasks).length}
                   </span>
                   <StatusBar
-                        className="h-4 rounded-lg font-light text-black"
+                        textColor="text-projects-bg"
+                        fillBg="bg-projects-accent"
                         current={
                               Object.entries(project.tasks).length -
                               openTasks.length
@@ -63,7 +64,7 @@ function OpenTasks({ taskData }) {
       if (!taskData.length) return null;
       return (
             <div className="open-tasks grid overflow-auto text-left text-wrap">
-                  <p className="task-header underline underline-offset-3">
+                  <p className="task-header font-semibold underline underline-offset-2">
                         Active Tasks
                   </p>
                   {Object.entries(taskData).map(([id, data]) => {

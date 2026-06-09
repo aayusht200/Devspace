@@ -15,7 +15,7 @@ const ClockWidget = ({ className }) => {
       const currTime = formatTime(time);
       return (
             <CardWidget
-                  className={`currDate bg-clock-bg border-clock-border text-clock-text ${className} text-xxs/snug grid items-center text-center md:text-xs/snug lg:text-sm/snug`}
+                  className={`currDate bg-clock-bg border-clock-border text-clock-text ${className} lg:text-md grid text-sm md:items-center md:text-sm/snug`}
                   header="Clock"
                   accent="text-clock-accent"
             >

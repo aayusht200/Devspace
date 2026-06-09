@@ -14,7 +14,7 @@ const Pages = ({
                   <div className="page-left flex w-1/13 flex-col items-center md:w-1/12">
                         <div className="back-button flex md:h-1/10">
                               <Button
-                                    className={`page-button text-xl md:text-3xl lg:text-4xl ${accent} `}
+                                    className={`page-button text-xl md:text-3xl lg:text-4xl`}
                                     onClick={onClick}
                                     hover={hover}
                               >
