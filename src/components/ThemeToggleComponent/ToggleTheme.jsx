@@ -8,7 +8,12 @@ const ToggleTheme = ({ className }) => {
                   onClick={toggleTheme}
                   className={`${className} absolute right-1 z-10 cursor-pointer p-5 hover:scale-125`}
             >
-                  {theme === 'dark' ? '🌙' : '☀️'}
+                  <span
+                        key={theme}
+                        className="inline-block animate-[spin_2s_ease-in-out]"
+                  >
+                        {theme === 'dark' ? '🌙' : '☀️'}
+                  </span>
             </button>
       );
 };

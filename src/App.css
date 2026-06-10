@@ -189,3 +189,11 @@
       --projects-text: hsl(180 92.2% 10%);
       --projects-accent: hsl(180.9 94.1% 40%);
 }
+html,
+body,
+* {
+      transition:
+            background-color 500ms ease-in,
+            color 1000ms ease-in,
+            border-color 1500ms ease-in;
+}
