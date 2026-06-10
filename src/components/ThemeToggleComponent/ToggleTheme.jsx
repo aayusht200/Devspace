@@ -10,7 +10,7 @@ const ToggleTheme = ({ className }) => {
             >
                   <span
                         key={theme}
-                        className="inline-block animate-[spin_2s_ease-in-out]"
+                        className="inline-block animate-[spin_0.5s_ease-in-out]"
                   >
                         {theme === 'dark' ? '🌙' : '☀️'}
                   </span>
