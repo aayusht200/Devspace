@@ -10,6 +10,7 @@ import ProjectTaskPage from './components/ProjectTracker/ProjectTaskPage';
 import EditProject from './components/ProjectTracker/EditProject';
 import EditProjectTask from './components/ProjectTracker/EditProjectTask';
 import { randomId } from './helperFunctions/functions';
+
 function App() {
       // localStorage.clear();
 

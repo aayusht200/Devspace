@@ -5,10 +5,13 @@ import ProjectTrackerWidget from '../ProjectTracker/ProjectTrackerWidget';
 import ReadingListWidget from '../ReadingList/ReadingListWidget';
 import SpotifyWidget from '../Spotify/SpotifyWidget';
 import TasksWidget from '../Tasks/TasksWidget';
-
+import ToggleTheme from '../ThemeToggleComponent/ToggleTheme';
 const Dashboard = () => {
       return (
-            <div className="bg-dashboard-bg border-dashboard-bg text-dashboard-bg flex flex-col gap-1 p-1 md:grid md:h-dvh md:w-dvw md:grid-cols-3 md:grid-rows-8">
+            <div className="bg-dashboard-bg border-dashboard-bg text-dashboard-bg relative flex flex-col gap-1 p-1 md:grid md:h-dvh md:w-dvw md:grid-cols-3 md:grid-rows-8">
+                  <ToggleTheme
+                        className={`bg-tasks-bg absolute right-0.5 z-10`}
+                  />
                   {/* col-1 */}
                   <ClockWidget className="h-25 md:col-start-1 md:row-span-1 md:h-full md:w-full" />
                   <ReadingListWidget className="h-full md:col-start-1 md:row-span-4 md:h-full md:w-full" />

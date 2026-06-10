@@ -5,64 +5,159 @@
       --text-xxs: 0.5rem;
       --text-label-xxxs: 0.25rem;
 
-      /* GitHub - Ink Black */
-      --color-default-bgColor-0: #151b23;
-      --color-default-bgColor-1: #033a16;
-      --color-default-bgColor-2: #196c2e;
-      --color-default-bgColor-3: #2ea043;
-      --color-default-bgColor-4: #56d364;
-      --color-bgColor-hover: #262c36;
+      /* Dashboard */
+      --color-dashboard-bg: var(--dashboard-bg);
+      --color-dashboard-border: var(--dashboard-border);
+      --color-dashboard-text: var(--dashboard-text);
+      --color-dashboard-accent: var(--dashboard-accent);
 
-      /* Dashboard Base */
-      --color-dashboard-bg: hsl(222 25% 7%);
-      --color-dashboard-border: hsl(222 20% 14%);
-      --color-dashboard-text: hsl(220 20% 96%);
-      --color-dashboard-accent: hsl(220 80% 65%);
-      /* Dashboard Base */
-      --color-dashboard-bg: hsl(222 25% 7%);
-      --color-dashboard-border: hsl(222 20% 14%);
-      --color-dashboard-text: hsl(220 20% 96%);
-      --color-dashboard-accent: hsl(220 80% 65%);
+      /* Clock */
+      --color-clock-bg: var(--clock-bg);
+      --color-clock-border: var(--clock-border);
+      --color-clock-text: var(--clock-text);
+      --color-clock-accent: var(--clock-accent);
 
-      /* Clock - Baby Blue Ice */
-      --color-clock-bg: hsl(210.9 64.7% 10%);
-      --color-clock-border: hsl(210.9 62.7% 20%);
-      --color-clock-text: hsl(210 61.5% 94.9%);
-      --color-clock-accent: hsl(210.9 63.4% 70%);
+      /* Pomodoro */
+      --color-pomodoro-bg: var(--pomodoro-bg);
+      --color-pomodoro-border: var(--pomodoro-border);
+      --color-pomodoro-text: var(--pomodoro-text);
+      --color-pomodoro-accent: var(--pomodoro-accent);
 
-      /* Pomodoro - Rich Mahogany */
-      --color-pomodoro-bg: hsl(6.9 68.6% 10%);
-      --color-pomodoro-border: hsl(7.1 66.7% 20%);
-      --color-pomodoro-text: hsl(7.1 68% 95.1%);
-      --color-pomodoro-accent: hsl(7 67.3% 70%);
+      /* Reading */
+      --color-reading-bg: var(--reading-bg);
+      --color-reading-border: var(--reading-border);
+      --color-reading-text: var(--reading-text);
+      --color-reading-accent: var(--reading-accent);
 
-      /* Reading - Mauve Shadow */
-      --color-reading-bg: hsl(318.5 25.5% 10%);
-      --color-reading-border: hsl(316.2 25.5% 20%);
-      --color-reading-text: hsl(310 23.1% 94.9%);
-      --color-reading-accent: hsl(316.9 25.5% 70%);
+      /* Tasks */
+      --color-tasks-bg: var(--tasks-bg);
+      --color-tasks-border: var(--tasks-border);
+      --color-tasks-text: var(--tasks-text);
+      --color-tasks-accent: var(--tasks-accent);
 
-      /* Tasks - Slate Indigo */
-      --color-tasks-bg: hsl(237.8 52.9% 10%);
-      --color-tasks-border: hsl(236.8 54.9% 20%);
-      --color-tasks-text: hsl(235.7 53.8% 94.9%);
-      --color-tasks-accent: hsl(237.1 54.2% 70%);
+      /* GitHub */
+      --color-github-bg: var(--github-bg);
+      --color-github-border: var(--github-border);
+      --color-github-text: var(--github-text);
+      --color-github-accent: var(--github-accent);
 
-      /* GitHub - Ink Black */
-      --color-github-bg: hsl(206.5 94.4% 7.1%);
-      --color-github-border: hsl(206.9 96.1% 10%);
-      --color-github-text: hsl(207.5 92.3% 94.9%);
-      --color-github-accent: hsl(206.9 94.8% 70%);
+      /* Spotify */
+      --color-spotify-bg: var(--spotify-bg);
+      --color-spotify-border: var(--spotify-border);
+      --color-spotify-text: var(--spotify-text);
+      --color-spotify-accent: var(--spotify-accent);
 
-      /* Spotify - Forest Green */
-      --color-spotify-bg: hsl(100.9 92.2% 10%);
-      --color-spotify-border: hsl(100.9 92.2% 20%);
-      --color-spotify-text: hsl(100 92.3% 94.9%);
-      --color-spotify-accent: hsl(101.1 93.5% 70%);
+      /* Projects */
+      --color-projects-bg: var(--projects-bg);
+      --color-projects-border: var(--projects-border);
+      --color-projects-text: var(--projects-text);
+      --color-projects-accent: var(--projects-accent);
+}
 
-      /* Projects - Tropical Teal */
-      --color-projects-bg: hsl(180 92.2% 10%);
-      --color-projects-border: hsl(181.3 94.1% 20%);
-      --color-projects-text: hsl(180 92.3% 94.9%);
-      --color-projects-accent: hsl(180.8 93.5% 70%);
+/* ===========================
+   DARK THEME (DEFAULT)
+   =========================== */
+
+:root {
+      /* Dashboard */
+      --dashboard-bg: hsl(222 25% 7%);
+      --dashboard-border: hsl(222 20% 14%);
+      --dashboard-text: hsl(220 20% 96%);
+      --dashboard-accent: hsl(220 80% 65%);
+
+      /* Clock */
+      --clock-bg: hsl(210.9 64.7% 10%);
+      --clock-border: hsl(210.9 62.7% 20%);
+      --clock-text: hsl(210 61.5% 94.9%);
+      --clock-accent: hsl(210.9 63.4% 70%);
+
+      /* Pomodoro */
+      --pomodoro-bg: hsl(6.9 68.6% 10%);
+      --pomodoro-border: hsl(7.1 66.7% 20%);
+      --pomodoro-text: hsl(7.1 68% 95.1%);
+      --pomodoro-accent: hsl(7 67.3% 70%);
+
+      /* Reading */
+      --reading-bg: hsl(318.5 25.5% 10%);
+      --reading-border: hsl(316.2 25.5% 20%);
+      --reading-text: hsl(310 23.1% 94.9%);
+      --reading-accent: hsl(316.9 25.5% 70%);
+
+      /* Tasks */
+      --tasks-bg: hsl(237.8 52.9% 10%);
+      --tasks-border: hsl(236.8 54.9% 20%);
+      --tasks-text: hsl(235.7 53.8% 94.9%);
+      --tasks-accent: hsl(237.1 54.2% 70%);
+
+      /* GitHub */
+      --github-bg: hsl(206.5 94.4% 7.1%);
+      --github-border: hsl(206.9 96.1% 10%);
+      --github-text: hsl(207.5 92.3% 94.9%);
+      --github-accent: hsl(206.9 94.8% 70%);
+
+      /* Spotify */
+      --spotify-bg: hsl(100.9 92.2% 10%);
+      --spotify-border: hsl(100.9 92.2% 20%);
+      --spotify-text: hsl(100 92.3% 94.9%);
+      --spotify-accent: hsl(101.1 93.5% 70%);
+
+      /* Projects */
+      --projects-bg: hsl(180 92.2% 10%);
+      --projects-border: hsl(181.3 94.1% 20%);
+      --projects-text: hsl(180 92.3% 94.9%);
+      --projects-accent: hsl(180.8 93.5% 70%);
+}
+
+/* ===========================
+   LIGHT THEME
+   =========================== */
+
+[data-theme='light'] {
+      /* Dashboard */
+      --dashboard-bg: hsl(220 20% 98%);
+      --dashboard-border: hsl(220 15% 88%);
+      --dashboard-text: hsl(220 25% 12%);
+      --dashboard-accent: hsl(220 80% 45%);
+
+      /* Clock */
+      --clock-bg: hsl(210 61.5% 94.9%);
+      --clock-border: hsl(210.9 62.7% 80%);
+      --clock-text: hsl(210.9 64.7% 10%);
+      --clock-accent: hsl(210.9 62.7% 40%);
+
+      /* Pomodoro */
+      --pomodoro-bg: hsl(7.1 68% 95.1%);
+      --pomodoro-border: hsl(7.1 66.7% 80%);
+      --pomodoro-text: hsl(6.9 68.6% 10%);
+      --pomodoro-accent: hsl(7.1 66.7% 40%);
+
+      /* Reading */
+      --reading-bg: hsl(310 23.1% 94.9%);
+      --reading-border: hsl(316.2 25.5% 80%);
+      --reading-text: hsl(318.5 25.5% 10%);
+      --reading-accent: hsl(317.6 24.9% 40.2%);
+
+      /* Tasks */
+      --tasks-bg: hsl(235.7 53.8% 94.9%);
+      --tasks-border: hsl(236.8 54.9% 80%);
+      --tasks-text: hsl(237.8 52.9% 10%);
+      --tasks-accent: hsl(237.3 53.9% 40%);
+
+      /* GitHub */
+      --github-bg: hsl(207.5 92.3% 94.9%);
+      --github-border: hsl(206.9 94.1% 80%);
+      --github-text: hsl(206.9 96.1% 10%);
+      --github-accent: hsl(206.9 95.1% 40%);
+
+      /* Spotify */
+      --spotify-bg: hsl(100 92.3% 94.9%);
+      --spotify-border: hsl(100.9 92.2% 80%);
+      --spotify-text: hsl(100.9 92.2% 10%);
+      --spotify-accent: hsl(101.1 93.1% 40%);
+
+      /* Projects */
+      --projects-bg: hsl(180 92.3% 94.9%);
+      --projects-border: hsl(181.3 94.1% 80%);
+      --projects-text: hsl(180 92.2% 10%);
+      --projects-accent: hsl(180.9 94.1% 40%);
 }
