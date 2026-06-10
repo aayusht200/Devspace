@@ -193,7 +193,7 @@ html,
 body,
 * {
       transition:
-            background-color 750ms ease-in,
-            color 750ms ease-in,
-            border-color 750ms ease-in;
+            background-color 300ms ease-in,
+            color 300ms ease-in,
+            border-color 300ms ease-in;
 }
