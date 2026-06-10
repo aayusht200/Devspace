@@ -12,11 +12,11 @@ const Dashboard = () => {
                   <ToggleTheme />
                   {/* col-1 */}
                   <ClockWidget className="h-25 md:col-start-1 md:row-span-1 md:h-full md:w-full" />
+                  <PomodoroWidget className="h-25 md:col-start-2 md:row-span-1 md:row-start-1 md:h-full md:w-full" />
                   <ReadingListWidget className="h-full md:col-start-1 md:row-span-4 md:h-full md:w-full" />
                   <GithubWidget className="h-35 md:col-start-1 md:row-span-2 md:h-full md:w-full" />
                   <SpotifyWidget className="h-30 md:col-span-2 md:col-start-1 md:row-span-1 md:h-full md:w-full" />
                   {/* col-2 */}
-                  <PomodoroWidget className="h-25 md:col-start-2 md:row-span-1 md:row-start-1 md:h-full md:w-full" />
                   <ProjectTrackerWidget className="h-full w-full md:col-start-2 md:row-span-6 md:row-start-2" />
                   {/* col-3 */}
                   <TasksWidget className="md:col-start-3 md:row-span-8 md:row-start-1 md:h-full md:w-full" />
