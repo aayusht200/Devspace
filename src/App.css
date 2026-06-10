@@ -5,6 +5,16 @@
       --text-xxs: 0.5rem;
       --text-label-xxxs: 0.25rem;
 
+      /* GitHub Heatmap */
+      /* GitHub Heatmap */
+      --color-default-bgColor-0: var(--github-map-0);
+      --color-default-bgColor-1: var(--github-map-1);
+      --color-default-bgColor-2: var(--github-map-2);
+      --color-default-bgColor-3: var(--github-map-3);
+      --color-default-bgColor-4: var(--github-map-4);
+      --color-bgColor-hover: var(--github-map-hover);
+      --color-github-map-bg: var(--github-map-bg);
+
       /* Dashboard */
       --color-dashboard-bg: var(--dashboard-bg);
       --color-dashboard-border: var(--dashboard-border);
@@ -59,6 +69,15 @@
    =========================== */
 
 :root {
+      /* GitHub Heatmap */
+      --github-map-0: #151b23;
+      --github-map-1: #033a16;
+      --github-map-2: #196c2e;
+      --github-map-3: #2ea043;
+      --github-map-4: #56d364;
+      --github-map-hover: #262c36;
+      --github-map-bg: hsl(220, 46%, 20%);
+
       /* Dashboard */
       --dashboard-bg: hsl(222 25% 7%);
       --dashboard-border: hsl(222 20% 14%);
@@ -113,6 +132,15 @@
    =========================== */
 
 [data-theme='light'] {
+      /* GitHub Heatmap */
+      --github-map-0: #ebedf0;
+      --github-map-1: #9be9a8;
+      --github-map-2: #40c463;
+      --github-map-3: #30a14e;
+      --github-map-4: #216e39;
+      --github-map-hover: #d8dee4;
+      --github-map-bg: hsl(220, 61%, 62%);
+
       /* Dashboard */
       --dashboard-bg: hsl(220 20% 98%);
       --dashboard-border: hsl(220 15% 88%);
